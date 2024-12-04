@@ -1,0 +1,166 @@
+/*Font sizes*/
+@keyframes navOnHover {
+  100% {
+    width: 100%;
+  }
+}
+h1 {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+/**/
+body {
+  margin: 0;
+  /*Set colors*/
+  background-color: #060309;
+  color: #ebe3f4;
+  /*Set main font*/
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+/*Holds main content*/
+.globalContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 48px;
+  margin-top: 64px;
+}
+
+.navAndHome {
+  position: sticky;
+  top: 0;
+  margin: 48px;
+  margin-top: 8px;
+}
+
+.logo {
+  cursor: pointer;
+  margin-top: 0px;
+  font-size: 32px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+  padding-right: 8px;
+  padding-left: 8px;
+  border-radius: 4px;
+}
+
+.logo::after {
+  content: "";
+  height: 100%;
+  width: 2px;
+  position: absolute;
+  right: 100%;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  transition: right 0.2s ease-in-out;
+  transition-delay: 0.05s;
+  transform: scaleY(0.9);
+  background-color: white;
+  background-image: none;
+}
+
+.logo:hover::after {
+  right: 0%;
+}
+
+.logo:hover {
+  background-color: #ebe3f4;
+  color: #060309;
+}
+
+/*Links in navigation*/
+.navLink {
+  cursor: pointer;
+  color: #ebe3f4;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 4px;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.navLink:hover {
+  background-color: #ebe3f4;
+  color: #060309;
+}
+
+/*Main navigation bar*/
+.mainNav {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  /*border-right: 2px solid;*/
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 0;
+  /*margin-left: calc($navMargin - 8px)/*navMargin - padding*/
+  /*margin-right: $navMargin;*/
+  padding-left: 8px;
+  padding-right: 16px;
+}
+
+.mainNav::after {
+  content: "";
+  height: 100%;
+  width: 2px;
+  position: absolute;
+  right: 0%;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  transition: right 0.2s ease-in-out;
+  transition-delay: 0.05s;
+  transform: scaleY(0.9);
+}
+
+.mainNav:hover::after {
+  right: 100%;
+}
+
+/*Holds main infomation at middle*/
+.infoContainer {
+  width: 400px;
+}
+.infoContainer h1 {
+  margin-top: 0px;
+}
+
+.card {
+  width: 320px;
+  height: 180px;
+  border-radius: 4px;
+  background-color: grey;
+}
+
+.selectorCard {
+  width: 320px;
+  height: 180px;
+  border-radius: 4px;
+  margin: 8px;
+  background-color: grey;
+}
+.selectorCard p {
+  margin-left: 4px;
+  margin-top: 4px;
+}
+
+.selectorTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 16px;
+  margin-left: 4px;
+  margin-bottom: 4px;
+}
+
+footer {
+  height: 2000px;
+}/*# sourceMappingURL=style.css.map */
