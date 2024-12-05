@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA2 - CSS Variability</title>
+    <link id="style" rel="stylesheet" href="./CSS/style_1.css">
+</head>
+<body>
+    <!--Navigation bar and style change-->
+    <nav>
+        <p>Games and screenshots</p>
+        <button class="buttons" onclick="toggleCSS()">Change style</button>  
+    </nav>
+    <!--Main container holding all sections with images-->
+    <div class="mainContainer">
+        <section class="maintext">
+            <!--Intoduction text and h1-->
+            <h1>Games in release order</h1>
+            <p>I like to make video games, and these are the main ones that I have developed. 
+                All of them were created in GameMaker and I did the code and art myself. The 
+                two games released are both platformers. Which is a fun genre to work in, 
+                however the genre is very oversaturated and more difficult to stand out. 
+                Which is why in my next game I’m trying something different with a top-down 
+                shooter. Where all combat is tied to a turn-based system while still being real time.
+            </p>
+        </section>
+        <!--Game container-->
+        <div class="game_container">
+            <img onmousemove="imageCourser(0)" class="game_header" src="./IMG/nosw.png" alt="">
+            <section class="gameInfo">
+                <!--Screenshots and info-->
+                <h2>No Sweet Looks</h2>
+                <div class="infoText">Top Down Shooter - In Development</div>
+                <div class="screenshots_container">
+                    <a href="./IMG/nosw_screen_1.png"><img class="screenshot" src="./IMG/nosw_screen_1.png" alt=""></a>
+                    <a href="./IMG/nosw_screen_2.png"><img class="screenshot" src="./IMG/nosw_screen_2.png" alt=""></a>
+                    <a href="./IMG/nosw_screen_3.png"><img class="screenshot" src="./IMG/nosw_screen_3.png" alt=""></a>
+                    <a href="./IMG/nosw_screen_4.png"><img class="screenshot" src="./IMG/nosw_screen_4.png" alt=""></a>
+                </div>
+                <div class="links">
+                    <a class="buttons" href="">In development</a>
+                </div>
+            </section>
+        </div>
+        <!--Game container-->
+        <div class="game_container">
+            <img onmousemove="imageCourser(1)" class="game_header" src="./IMG/Ginnung.jpeg" alt="">
+            <section class="gameInfo">
+                <!--Screenshots and info-->
+                <h2>Ginnung</h2>
+                <div class="infoText">Platformer - Released 2022</div>
+                <div class="screenshots_container">
+                    <a href="./IMG/Gunnung_screen_1.jpg"><img class="screenshot" src="./IMG/Gunnung_screen_1.jpg" alt=""></a>
+                    <a href="./IMG/Ginnung_screen_2.jpg"><img class="screenshot" src="./IMG/Ginnung_screen_2.jpg" alt=""></a>
+                    <a href="./IMG/Ginnung_screen_3.jpg"><img class="screenshot" src="./IMG/Ginnung_screen_3.jpg" alt=""></a>
+                    <a href="./IMG/Ginnung_screen_4.jpg"><img class="screenshot" src="./IMG/Ginnung_screen_4.jpg" alt=""></a>
+                </div>
+                <div class="links">
+                    <a class="buttons" href="https://store.steampowered.com/app/2125270/Ginnung/">Steam</a>
+                    <a class="buttons" href="https://www.nintendo.com/us/store/products/ginnung-switch/">Switch</a>
+                </div>
+            </section>
+        </div>
+        <!--Game container-->
+        <div class="game_container">
+            <img onmousemove="imageCourser(2)" class="game_header" src="./IMG/fusion_shift.png" alt="">
+            <section class="gameInfo">
+                <!--Screenshots and info-->
+                <h2>Fusion SHIFT</h2>
+                <div class="infoText">Platformer - Released 2020</div>
+                <div class="screenshots_container">
+                    <a href="./IMG/fusionShift_screen_1.jpg"><img class="screenshot" src="./IMG/fusionShift_screen_1.jpg" alt=""></a>
+                    <a href="./IMG/fusionShift_screen_2.jpg"><img class="screenshot" src="./IMG/fusionShift_screen_2.jpg" alt=""></a>
+                    <a href="./IMG/fusionShift_screen_3.jpg"><img class="screenshot" src="./IMG/fusionShift_screen_3.jpg" alt=""></a>
+                    <a href="./IMG/fusionShift_screen_4.jpg"><img class="screenshot" src="./IMG/fusionShift_screen_4.jpg" alt=""></a>
+                </div>
+                <div class="links">
+                    <a class="buttons" href="https://store.steampowered.com/app/1254070/Fusion_SHIFT/">Steam</a>
+                    <a class="buttons" href="https://www.nintendo.com/us/store/products/fusion-shift-switch/">Switch</a>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!--Screenshots in style_2.css are appended here-->
+    <div class="myCourser" id = "courserImg"></div>
+    <!---->
+    <footer>
+        <!--Add empty space-->
+        <!--Add empty space-->
+    </footer>
+    <!--
+    Load script
+    Used for CSS switch and appending courser images in style_2.css
+    -->
+    <script src="./script.js"></script> 
+</body>
+</html>

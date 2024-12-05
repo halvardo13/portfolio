@@ -1,0 +1,167 @@
+/*Create variables*/
+:root {
+    --text: #07020f;
+    --background: #faf7fe;
+    --primary: #7036e2;
+    --secondary: #ee8adc;
+    --accent: #e75c9f;
+}
+/*Set body*/
+body {
+    background: var(--background);
+    margin: 0;
+    color: var(--text);
+
+    font-family:'Trebuchet MS', Arial, sans-serif;
+}
+/*Holds game hero images*/
+.mainContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.maintext {
+    /*
+    Grow this so text has a row to itself
+    Text is in same flex as images
+    */
+    flex-grow: 4;
+    margin-left: 32px;
+    padding-left: 10%;
+    padding-right: 50%;
+    font-size: 20px;
+}
+h1 {
+    font-size: 24px;
+}
+/*Holds game and screenshots*/
+.game_container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+    margin-top: 32px;
+}
+/*Hero images and add animattions for color filter*/
+.game_header {
+    object-fit: cover;
+    filter: grayscale(80%);
+    transition: filter 1s;
+
+    font-size: 16px;
+}
+.game_header:hover {
+    filter: grayscale(0%);
+}
+.gameInfo {
+    color: var(--accent);
+}
+.gameInfo p {
+    font-weight: bolder;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+.links {
+    margin-top: 16px;
+}
+/*Set navbar*/
+nav {
+    display: flex;
+    justify-content: space-between;
+
+    /*Border for full width of screen with gradient*/
+    border-bottom: solid;
+    border-color: var(--primary);
+    border-image: linear-gradient(to right, var(--primary), var(--accent)) 1;
+    border-radius: 16px;
+
+    margin-top: 16px;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+nav p {
+    margin: 32px;
+    font-size: 32px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(left, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 640px;
+    height: 360px;
+}
+.screenshots_container {
+    /*
+    Hide screenshots when page loads
+    the script will pull from these screenshots in html
+    and append to courser
+    */
+    display: none;
+}
+.screenshot {
+    /*
+    Set animation created under at keyframes
+    animations are initated whenever a screenshot is added to courser
+    */
+    animation-name: imageAnimate;
+    animation-duration: 0.5s;
+
+    width: 320px;
+    height: 180px;
+
+    position: relative;
+}
+/*Animations when screenshots are appended to courserImg*/
+@keyframes imageAnimate {
+    0%   {scale: 0; opacity: 0;}
+    100% {scale: 1; opacity: 1;}
+}
+/*Container to display screenshots, position is absolute so it can follow mouse*/
+.myCourser {
+    width: fit-content;
+    height: fit-content;
+
+    position: absolute;
+}
+/*Button design*/
+.buttons {
+    color: var(--background);
+    font-size: 24px;   
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 4px;
+    margin-right: 4px;
+    cursor:pointer;    
+    background-color: var(--primary);
+    
+    border: 2px solid var(--primary); /* Green */
+    border-radius: 8px;
+    padding: 8px;
+
+    transition: 0.5s ease 0s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.buttons:hover {
+    color: var(--primary);
+    background-color: var(--background);
+}
+nav .buttons {
+    margin: 16px;
+}
+p {
+    margin-top: 8px;
+}
+
+@media only screen and (max-width: 900px) { 
+    .maintext {
+        padding-right: 20%;
+    }
+
+}

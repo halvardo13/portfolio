@@ -1,0 +1,204 @@
+/*Variables*/
+:root {
+    /*Define color pallate*/
+    --backgroundColor : #050f13;
+    --cardColor : #202580;
+    --textMainColor : #d7eff5;
+    --specialColor : #c15279;
+    
+    /*Others*/
+    --buttonColor: #FBAB7E;
+    --cardRadius : 6px;
+}
+/*Setup basic body*/
+body {
+    background-color: var(--backgroundColor);
+    font-family:'Trebuchet MS', Arial, sans-serif;
+    margin: 0px;
+    
+    color: var(--textMainColor);
+}
+/*Setup nav bar*/
+nav {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: var(--cardColor);
+
+    box-shadow: 0px 12px 34px 3px #000000;
+    border-radius: 16px;
+
+    margin-top: 16px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+nav p {
+    margin: 32px;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--textMainColor);
+}
+h1 {
+    color: var(--textMainColor);
+}
+/*Container for text*/
+.maintext {
+    max-width: 800px;
+    font-size: 20px;
+    box-shadow: 0px 12px 34px 3px #000000;
+    background-color: #10191d;
+    border-radius: 16px;
+    border-radius: 4px;
+    margin: 16px;
+    margin-left: 0px;
+    padding: 16px;
+}
+/*Main container to hold the game cards and center to middle*/
+.mainContainer {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*Class for the hero image for games*/
+.game_header {
+    /*Put hero image above screenshots for shadow effect*/
+    z-index: 0;
+    box-shadow: 0px 12px 34px 3px #000000;
+}
+/*gameInfo holds all information about the game(name, screenshots, links)*/
+.gameInfo {
+    background-color: var(--cardColor);
+    background-image: linear-gradient(64deg, var(--cardColor) 47%, #b22db4 100%);
+    border-radius: 0px var(--cardRadius) var(--cardRadius) 0px;
+}
+.infoText {
+    font-size: 16px;  
+    margin: 16px;
+    margin-top: 0px;
+    margin-bottom: 8px;
+    color: lightgray;
+}
+/*Game container holds hero image and game info, is the main container for game cards*/
+.game_container {
+    display: flex;
+    width: 984px;
+
+    /*Cards flow right, changes to collum at smaller sizes*/
+    flex-flow: row wrap;
+
+    color: var(--textMainColor);
+    font-size: 32px;   
+
+    margin-top: 32px;
+    box-shadow: 0px 12px 34px 3px #000000;
+}
+.game_container p {
+    color: var(--textMainColor);
+    font-size: 24px;
+    font-weight: bold;
+
+    margin: 16px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+/*Hero imgae size*/
+img {
+    width: 640px;
+    height: 360px;
+}
+.screenshots_container {
+    width: 344px;
+}
+/*links holds the buttons to link to games*/
+.links {
+    display: flex;
+    justify-content: space-evenly;
+
+    margin-top: 16px;
+}
+/*Style the buttons*/
+.buttons {
+    color: var(--buttonColor);
+    font-size: 24px;   
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 4px;
+    margin-right: 4px;
+
+    cursor:pointer;    
+    background-color: var(--cardColor);
+    
+    border: 2px solid var(--buttonColor); 
+    border-radius: 8px;
+    padding: 8px;
+
+    transition: 0.5s ease;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.buttons:hover {
+    color: var(--cardColor);
+    background-color: var(--buttonColor);
+}
+/*Seperate margins for button in nav bar*/
+nav .buttons {
+    margin: 16px;
+}
+/*Styling for screenshot images goes here*/
+.screenshot {
+    width: 162px;
+    height: 96px;   
+    box-shadow: none;
+    transition: transform 0.5s ease;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.screenshot:hover {
+    /*scale when hovering*/
+    transform: scale(1.75);
+    cursor:pointer;    
+}
+footer {
+    /*Add some heigth at end of document*/
+    height: 100px;
+}
+h2 {
+    margin-top: 8px;
+    margin-left: 16px;
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+/*Change sizes and flex flow for smaller screens*/
+@media only screen and (max-width: 900px) { 
+    img {
+        /*Smaller hero image*/
+        width: 333px;
+        height: 180px;
+    }
+    .game_container {    
+        /*Change flow of cards to colloms, to take up less space*/
+        flex-flow: column wrap;
+        width: 333px;
+    }
+    .gameInfo {
+        width: 333px;
+        border-radius: 0px 0px var(--cardRadius) var(--cardRadius);
+    }
+    .maintext {
+        max-width: 300px;
+    }
+    nav p {
+        font-size: 24px;
+    }
+    .maintext {
+        font-size: 16px;
+    }
+}
+/*Fix navbar at very small*/
+@media only screen and (max-width: 680px) { 
+    nav p {
+        font-size: 16px;
+        display: none;
+    }
+    nav {
+        justify-content: center;
+    }
+}
