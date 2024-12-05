@@ -1,4 +1,7 @@
+/*Magins*/
+/*Cards*/
 /*Font sizes*/
+/*Other designs that should remain consistent*/
 @keyframes navOnHover {
   100% {
     width: 100%;
@@ -126,6 +129,103 @@ body {
   right: 100%;
 }
 
+.cardContainer {
+  /*Flex display*/
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  background-color: #060309;
+  border-radius: 4px;
+  color: #819796;
+  padding: 6px;
+  text-align: center;
+  position: relative;
+  margin: 8px;
+}
+.cardContainer img {
+  width: 320px;
+  height: 180px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 40px -20px black;
+}
+
+.cardContainer:hover {
+  color: #ebe3f4;
+}
+
+.cardContainer::before {
+  content: "";
+  /*Set background*/
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  border-radius: 4px;
+  /*Put behind*/
+  z-index: -1;
+  /*Overflow to look like border*/
+  margin: -2px;
+  /*Position same*/
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0px 0px 70px -50px #4158D0;
+  transition: box-shadow 0.4s;
+}
+
+.cardContainer:hover::before {
+  background-image: none;
+  background-color: #FFCC70;
+  box-shadow: none;
+}
+
+/*Text elements in card*/
+.cardName {
+  margin: 0px;
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  /*Add gradient to card name*/
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cardDesc {
+  margin: 0px;
+  margin-top: 2px;
+  width: 200px;
+}
+
+/*Card Links*/
+.cardLinksContainer {
+  display: inline-flex;
+  justify-content: space-around;
+  margin: 0px;
+  margin-top: 10px;
+  width: 220px;
+}
+.cardLinksContainer a {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ebe3f4;
+  text-decoration: none;
+  background-color: #060309;
+  padding: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin: 4px;
+  margin-bottom: 0px;
+  border: 2px solid #ebe3f4;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+.cardLinksContainer a:hover {
+  background-color: #ebe3f4;
+  color: #060309;
+}
+
+/*/**/ /**/
 /*Holds main infomation at middle*/
 .infoContainer {
   width: 600px;
@@ -133,13 +233,13 @@ body {
 }
 .infoContainer h1 {
   margin-top: 0px;
+  font-weight: normal;
 }
 
 .card {
   width: 320px;
   height: 180px;
   border-radius: 4px;
-  background-color: grey;
   margin-top: 96px;
 }
 

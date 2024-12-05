@@ -1,28 +1,43 @@
 $backcoundColor : #060309;
 $textColor_1 : #ebe3f4;
+$textColor_2 : #819796;
 
+/*Magins*/
 $navMargin : 128px;
 $mainContentMargingTop : 96px;
+
+/*Cards*/
+$cardBorderCol : #FFCC70;
+
 
 /*Font sizes*/
 $fSizeLogo : 32px;
 $fSizeNav : 20px;
 $fSizeh1 : 48px;
 
+
+/*Other designs that should remain consistent*/
 $borderRad : 4px;
+$lineAndBorderWidth : 2px;
+$transitionSpd : 0.2s;
+
+$gradColor1 : #4158D0;
+$gradColor2 : #C850C0;
+$gradColor3 : #FFCC70;
+$globalGradient : linear-gradient(43deg, $gradColor1 0%, $gradColor2 46%, $gradColor3 100%);
 
 @mixin hoverEffectLine($pos) {
     content: "";
     height: 100%;
-    width: 2px;
+    width: $lineAndBorderWidth;
     position: absolute;
     right: $pos;
 
 
     background-color: #4158D0;
-    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    background-image: $globalGradient;
 
-    transition: right 0.2s ease-in-out;
+    transition: right $transitionSpd ease-in-out;
     transition-delay: 0.05s;
     transform: scaleY(0.9);
 }
@@ -106,7 +121,7 @@ body {
 
     border-radius: $borderRad;
 
-    transition: 0.2s;
+    transition: $transitionSpd;
 }
 .navLink:hover {
     background-color: $textColor_1;
@@ -138,6 +153,110 @@ body {
 
 
 
+.cardContainer {
+    /*Flex display*/
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+
+    background-color: $backcoundColor;
+    border-radius: $borderRad;
+
+    color: $textColor_2;
+
+    padding: 6px;
+
+    text-align: center;
+
+    position: relative;
+
+    margin: 8px;
+
+    img {
+        width: 320px;
+        height: 180px;
+        border-radius: $borderRad;
+        box-shadow: 0px 0px 40px -20px black;
+        
+    }
+}
+.cardContainer:hover {
+    color: $textColor_1;
+}
+.cardContainer::before {
+    content: "";
+    /*Set background*/
+    background-image: $globalGradient;
+    border-radius: $borderRad;
+    /*Put behind*/
+    z-index: -1;
+    /*Overflow to look like border*/
+    margin: -$lineAndBorderWidth;
+    /*Position same*/
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+
+    box-shadow: 0px 0px 70px -50px $gradColor1;
+    transition : box-shadow 0.4s;
+}
+.cardContainer:hover::before {
+    background-image: none;
+    background-color: $gradColor3;
+    box-shadow: none;
+}
+/*Text elements in card*/
+.cardName {
+    margin: 0px;
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    
+    /*Add gradient to card name*/
+    background-image: $globalGradient;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.cardDesc {
+    margin: 0px;
+    margin-top: 2px;
+
+    width: 200px;
+}
+/*Card Links*/
+.cardLinksContainer {
+    display: inline-flex;
+    justify-content: space-around;
+    margin: 0px;
+    margin-top: 10px;
+    width: 220px;
+    a {
+        font-size: $fSizeNav;
+        font-weight: bold;
+        color: $textColor_1;
+        text-decoration: none;
+        background-color: $backcoundColor;
+        padding: 4px;
+        padding-right: 8px;
+        padding-left: 8px;
+
+        margin: 4px;
+        margin-bottom: 0px;
+
+        border: $lineAndBorderWidth solid $textColor_1;
+        border-radius: $borderRad;
+        transition: $transitionSpd;
+    }
+    a:hover {
+        background-color: $textColor_1;
+        color: $backcoundColor;
+
+        
+    }
+}
+/*/**//**/
+
+
 
 
 /*Holds main infomation at middle*/
@@ -146,6 +265,7 @@ body {
     margin-top: $mainContentMargingTop;
     h1 {
         margin-top: 0px;
+        font-weight: normal;
     }
 }
 
@@ -155,7 +275,6 @@ body {
 
     border-radius: $borderRad;
 
-    background-color: grey;
     margin-top: $mainContentMargingTop;
 }
 
