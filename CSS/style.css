@@ -2,9 +2,15 @@
 /*Cards*/
 /*Font sizes*/
 /*Other designs that should remain consistent*/
-@keyframes navOnHover {
+@keyframes navLineFadein {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
   100% {
-    width: 100%;
+    opacity: 100;
   }
 }
 h1 {
@@ -64,6 +70,12 @@ body {
   transition: right 0.2s ease-in-out;
   transition-delay: 0.05s;
   transform: scaleY(0.9);
+  /*A fade in animation is needed for the this line effect. 
+  Without the fade in, clicking links on the nav bar would feel a bit janky since the line would snap 
+  instantly and than back again becuse user is still hovering. Fading the line in helped alot.
+  */
+  animation-name: navLineFadein;
+  animation-duration: 1.5s;
   background-color: white;
   background-image: none;
 }
@@ -88,6 +100,7 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   padding: 4px;
+  text-decoration: none;
   border-radius: 4px;
   transition: 0.2s;
 }
@@ -95,6 +108,10 @@ body {
 .navLink:hover {
   background-color: #ebe3f4;
   color: #060309;
+}
+
+.currentLinkAt {
+  color: #FFCC70;
 }
 
 /*Main navigation bar*/
@@ -111,6 +128,10 @@ body {
   padding-left: 8px;
   padding-right: 16px;
 }
+.mainNav p {
+  margin: 0;
+  text-decoration: underline;
+}
 
 .mainNav::after {
   content: "";
@@ -123,6 +144,12 @@ body {
   transition: right 0.2s ease-in-out;
   transition-delay: 0.05s;
   transform: scaleY(0.9);
+  /*A fade in animation is needed for the this line effect. 
+  Without the fade in, clicking links on the nav bar would feel a bit janky since the line would snap 
+  instantly and than back again becuse user is still hovering. Fading the line in helped alot.
+  */
+  animation-name: navLineFadein;
+  animation-duration: 1.5s;
 }
 
 .mainNav:hover::after {
@@ -130,31 +157,44 @@ body {
 }
 
 .cardContainer {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  width: 1000px;
+}
+
+.card {
   /*Flex display*/
   display: flex;
   align-items: center;
   flex-flow: column;
+  /*Set to fit-content to keep size anywhere*/
+  width: -moz-fit-content;
+  width: fit-content;
   background-color: #060309;
-  border-radius: 4px;
   color: #819796;
+  border-radius: 4px;
+  /*Positioning and some extra space betwenn border*/
   padding: 6px;
-  text-align: center;
-  position: relative;
   margin: 8px;
+  position: relative;
+  text-align: center;
+  /*Keep images in a conisten style within cards*/
 }
-.cardContainer img {
+.card img {
   width: 320px;
   height: 180px;
   border-radius: 4px;
   box-shadow: 0px 0px 40px -20px black;
 }
 
-.cardContainer:hover {
+.card:hover {
   color: #ebe3f4;
 }
 
-.cardContainer::before {
+.card::before {
   content: "";
+  /*Add a new element to act as a border with gradient*/
   /*Set background*/
   background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
   border-radius: 4px;
@@ -169,10 +209,10 @@ body {
   bottom: 0;
   left: 0;
   box-shadow: 0px 0px 70px -50px #4158D0;
-  transition: box-shadow 0.4s;
+  transition: box-shadow 0.2s;
 }
 
-.cardContainer:hover::before {
+.card:hover::before {
   background-image: none;
   background-color: #FFCC70;
   box-shadow: none;
@@ -228,19 +268,12 @@ body {
 /*/**/ /**/
 /*Holds main infomation at middle*/
 .infoContainer {
-  width: 600px;
+  width: 1200px;
   margin-top: 96px;
 }
 .infoContainer h1 {
   margin-top: 0px;
   font-weight: normal;
-}
-
-.card {
-  width: 320px;
-  height: 180px;
-  border-radius: 4px;
-  margin-top: 96px;
 }
 
 .selectorCard {

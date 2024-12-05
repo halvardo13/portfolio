@@ -1,3 +1,5 @@
+
+
 $backcoundColor : #060309;
 $textColor_1 : #ebe3f4;
 $textColor_2 : #819796;
@@ -40,11 +42,20 @@ $globalGradient : linear-gradient(43deg, $gradColor1 0%, $gradColor2 46%, $gradC
     transition: right $transitionSpd ease-in-out;
     transition-delay: 0.05s;
     transform: scaleY(0.9);
+
+    /*A fade in animation is needed for the this line effect. 
+    Without the fade in, clicking links on the nav bar would feel a bit janky since the line would snap 
+    instantly and than back again becuse user is still hovering. Fading the line in helped alot.
+    */
+    animation-name: navLineFadein;
+    animation-duration: 1.5s;
 }
 
 
-@keyframes navOnHover {
-    100% {width: 100%;}
+@keyframes navLineFadein {
+    0% {opacity: 0}
+    25% {opacity: 0}
+    100% {opacity: 100;}
 }
 
 
@@ -117,7 +128,7 @@ body {
     margin-bottom: 12px;
     width: fit-content;
     padding: 4px;
-
+    text-decoration: none;
 
     border-radius: $borderRad;
 
@@ -126,6 +137,9 @@ body {
 .navLink:hover {
     background-color: $textColor_1;
     color: $backcoundColor;
+}
+.currentLinkAt {
+    color: $gradColor3;
 }
 /*Main navigation bar*/
 .mainNav {
@@ -142,6 +156,10 @@ body {
     /*margin-right: $navMargin;*/
     padding-left: 8px;
     padding-right: 16px;
+    p {
+        margin: 0;
+        text-decoration: underline;
+    }
 }
 .mainNav::after {
     @include hoverEffectLine(0%);
@@ -150,41 +168,44 @@ body {
     right: 100%;
 }
 
-
-
-
 .cardContainer {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    width: 1000px;
+}
+.card {
     /*Flex display*/
     display: flex;
     align-items: center;
     flex-flow: column;
-
+    /*Set to fit-content to keep size anywhere*/
+    width: fit-content;
+    
     background-color: $backcoundColor;
+    color: $textColor_2;
     border-radius: $borderRad;
 
-    color: $textColor_2;
-
+    /*Positioning and some extra space betwenn border*/
     padding: 6px;
-
+    margin: 8px;
+    position: relative;
     text-align: center;
 
-    position: relative;
-
-    margin: 8px;
-
+    /*Keep images in a conisten style within cards*/
     img {
         width: 320px;
         height: 180px;
         border-radius: $borderRad;
         box-shadow: 0px 0px 40px -20px black;
-        
     }
 }
-.cardContainer:hover {
+.card:hover {
     color: $textColor_1;
 }
-.cardContainer::before {
+.card::before {
     content: "";
+    /*Add a new element to act as a border with gradient*/
     /*Set background*/
     background-image: $globalGradient;
     border-radius: $borderRad;
@@ -195,11 +216,10 @@ body {
     /*Position same*/
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
-
     box-shadow: 0px 0px 70px -50px $gradColor1;
-    transition : box-shadow 0.4s;
+    transition : box-shadow $transitionSpd;
 }
-.cardContainer:hover::before {
+.card:hover::before {
     background-image: none;
     background-color: $gradColor3;
     box-shadow: none;
@@ -261,23 +281,13 @@ body {
 
 /*Holds main infomation at middle*/
 .infoContainer {
-    width: 600px;
+    width: 1200px;
     margin-top: $mainContentMargingTop;
     h1 {
         margin-top: 0px;
         font-weight: normal;
     }
 }
-
-.card {
-    width: 320px;
-    height: 180px;
-
-    border-radius: $borderRad;
-
-    margin-top: $mainContentMargingTop;
-}
-
 .selectorCard {
     width: 320px;
     height: 180px;
