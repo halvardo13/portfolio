@@ -2,7 +2,7 @@ $backcoundColor : #060309;
 $textColor_1 : #ebe3f4;
 
 $navMargin : 128px;
-
+$mainContentMargingTop : 96px;
 
 /*Font sizes*/
 $fSizeLogo : 32px;
@@ -142,7 +142,8 @@ body {
 
 /*Holds main infomation at middle*/
 .infoContainer {
-    width: 400px;
+    width: 600px;
+    margin-top: $mainContentMargingTop;
     h1 {
         margin-top: 0px;
     }
@@ -155,13 +156,14 @@ body {
     border-radius: $borderRad;
 
     background-color: grey;
-
+    margin-top: $mainContentMargingTop;
 }
 
 .selectorCard {
     width: 320px;
     height: 180px;
 
+    
     border-radius: $borderRad;
 
     margin: 8px;
