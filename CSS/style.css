@@ -1,6 +1,6 @@
 /*Magins*/
 /*Cards*/
-/*Font sizes*/
+/*Define the three main font sizes to keep consistency*/
 /*Other designs that should remain consistent*/
 @keyframes navLineFadein {
   0% {
@@ -16,6 +16,10 @@
 h1 {
   font-size: 48px;
   margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 32px;
 }
 
 /**/
@@ -36,13 +40,6 @@ body {
   flex-wrap: wrap;
   margin: 48px;
   margin-top: 64px;
-}
-
-.navAndHome {
-  position: sticky;
-  top: 0;
-  margin: 48px;
-  margin-top: 8px;
 }
 
 .logo {
@@ -95,8 +92,8 @@ body {
   color: #ebe3f4;
   font-size: 20px;
   font-weight: bold;
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   width: -moz-fit-content;
   width: fit-content;
   padding: 4px;
@@ -114,11 +111,19 @@ body {
   color: #FFCC70;
 }
 
+.navAndHome {
+  position: sticky;
+  top: 0;
+  margin: 48px;
+  margin-top: 48px;
+}
+
 /*Main navigation bar*/
 .mainNav {
   display: flex;
   flex-flow: column;
-  position: relative;
+  /*Set to absolute so main content can be placed next to it*/
+  position: absolute;
   /*border-right: 2px solid;*/
   width: -moz-fit-content;
   width: fit-content;
@@ -156,13 +161,7 @@ body {
   right: 100%;
 }
 
-.cardContainer {
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
-  width: 1000px;
-}
-
+/*Card design that holds content with links*/
 .card {
   /*Flex display*/
   display: flex;
@@ -222,7 +221,7 @@ body {
 .cardName {
   margin: 0px;
   margin-top: 10px;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
   /*Add gradient to card name*/
   background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
@@ -239,10 +238,11 @@ body {
 
 /*Card Links*/
 .cardLinksContainer {
-  display: inline-flex;
+  display: flex;
   justify-content: space-around;
+  /*Set margin to auto so card height sizes in each category remains consistent, and on the same level*/
   margin: 0px;
-  margin-top: 10px;
+  margin-top: auto;
   width: 220px;
 }
 .cardLinksContainer a {
@@ -265,6 +265,52 @@ body {
   color: #060309;
 }
 
+/*Container to hold cards*/
+.cardContainer {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+/*Container for main content. Will be in global container to go next to nav bar*/
+.mainContent {
+  margin-left: 320px;
+}
+.mainContent h1 {
+  font-weight: normal;
+}
+
+.textContent {
+  width: 500px;
+  font-size: 20px;
+}
+
+.headline {
+  font-size: 32px;
+}
+
+.logo::after {
+  content: "";
+  height: 100%;
+  width: 2px;
+  position: absolute;
+  right: 100%;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  transition: right 0.2s ease-in-out;
+  transition-delay: 0.05s;
+  transform: scaleY(0.9);
+  /*A fade in animation is needed for the this line effect. 
+  Without the fade in, clicking links on the nav bar would feel a bit janky since the line would snap 
+  instantly and than back again becuse user is still hovering. Fading the line in helped alot.
+  */
+  animation-name: navLineFadein;
+  animation-duration: 1.5s;
+  background-color: white;
+  background-image: none;
+}
+
 /*/**/ /**/
 /*Holds main infomation at middle*/
 .infoContainer {
@@ -284,8 +330,10 @@ body {
   background-color: grey;
 }
 .selectorCard p {
+  display: inline-block;
   margin-left: 4px;
   margin-top: 4px;
+  font-size: 20px;
 }
 
 .selectorTitle {
