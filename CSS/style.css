@@ -13,13 +13,76 @@
     opacity: 100;
   }
 }
+@keyframes headerLines {
+  /*Delay a small amout from opacity fade*/
+  0% {
+    width: 0%;
+  }
+  75% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
 h1 {
   font-size: 48px;
   margin-bottom: 8px;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+h1::before {
+  content: "";
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  /*A fade in animation is needed for the this line effect. 
+  Without the fade in, clicking links on the nav bar would feel a bit janky since the line would snap 
+  instantly and than back again becuse user is still hovering. Fading the line in helped alot.
+  */
+  animation-name: navLineFadein;
+  animation-duration: 1.5s;
+  animation-name: headerLines;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
 }
 
 h2 {
   font-size: 32px;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+h2::before {
+  content: "";
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  /*A fade in animation is needed for the this line effect. 
+  Without the fade in, clicking links on the nav bar would feel a bit janky since the line would snap 
+  instantly and than back again becuse user is still hovering. Fading the line in helped alot.
+  */
+  animation-name: navLineFadein;
+  animation-duration: 1.5s;
+  animation-name: headerLines;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+/*Set costum font*/
+@font-face {
+  font-family: myFirstFont;
+  src: url(../Font/Outfit-VariableFont.ttf);
+}
+html {
+  font-family: myFirstFont, "Trebuchet MS", sans-serif;
 }
 
 /**/
@@ -29,7 +92,7 @@ body {
   background-color: #060309;
   color: #ebe3f4;
   /*Set main font*/
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: "Outfit" sans-serif;
 }
 
 /*Holds main content*/
@@ -45,7 +108,9 @@ body {
 .logo {
   cursor: pointer;
   margin-top: 0px;
+  margin-bottom: 16px;
   font-size: 32px;
+  font-weight: bold;
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
@@ -233,7 +298,7 @@ body {
 .cardDesc {
   margin: 0px;
   margin-top: 2px;
-  width: 200px;
+  width: 260px;
 }
 
 /*Card Links*/
@@ -271,6 +336,8 @@ body {
   flex-flow: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 /*Container for main content. Will be in global container to go next to nav bar*/
@@ -284,31 +351,17 @@ body {
 .textContent {
   width: 500px;
   font-size: 20px;
+  color: #819796;
 }
 
 .headline {
   font-size: 32px;
 }
 
-.logo::after {
-  content: "";
-  height: 100%;
-  width: 2px;
-  position: absolute;
-  right: 100%;
-  background-color: #4158D0;
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-  transition: right 0.2s ease-in-out;
-  transition-delay: 0.05s;
-  transform: scaleY(0.9);
-  /*A fade in animation is needed for the this line effect. 
-  Without the fade in, clicking links on the nav bar would feel a bit janky since the line would snap 
-  instantly and than back again becuse user is still hovering. Fading the line in helped alot.
-  */
-  animation-name: navLineFadein;
-  animation-duration: 1.5s;
-  background-color: white;
-  background-image: none;
+.highlight {
+  color: #060309;
+  background-color: #819796;
+  font-weight: bold;
 }
 
 /*/**/ /**/
@@ -345,5 +398,10 @@ body {
 }
 
 footer {
-  height: 2000px;
+  margin: 0;
+  margin-left: 48px;
+  text-align: right;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 32px;
 }/*# sourceMappingURL=style.css.map */

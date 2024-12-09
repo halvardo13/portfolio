@@ -57,20 +57,17 @@ $globalGradient : linear-gradient(43deg, $gradColor1 0%, $gradColor2 46%, $gradC
     animation-name: navLineFadein;
     animation-duration: 1.5s;
 }
-@mixin underlineEffectLine() {
+@mixin underlineEffectLine($animStart) {
     content: "";
-    height: 100%;
-    width: $lineAndBorderWidth;
+    height: $lineAndBorderWidth;
     position: absolute;
-    right: 0;
 
+    bottom: 0;
 
     background-color: #4158D0;
     background-image: $globalGradient;
 
-    transition: right $transitionSpd ease-in-out;
-    transition-delay: 0.05s;
-    transform: scaleY(0.9);
+
 
     /*A fade in animation is needed for the this line effect. 
     Without the fade in, clicking links on the nav bar would feel a bit janky since the line would snap 
@@ -78,6 +75,9 @@ $globalGradient : linear-gradient(43deg, $gradColor1 0%, $gradColor2 46%, $gradC
     */
     animation-name: navLineFadein;
     animation-duration: 1.5s;
+    animation-name: headerLines;
+    animation-duration: $animStart;
+    animation-fill-mode: forwards;
 }
 
 @keyframes navLineFadein {
@@ -85,18 +85,41 @@ $globalGradient : linear-gradient(43deg, $gradColor1 0%, $gradColor2 46%, $gradC
     25% {opacity: 0}
     100% {opacity: 100;}
 }
+@keyframes headerLines {
+    /*Delay a small amout from opacity fade*/
+    0% {width: 0%}
+    75% {width: 0%}
+    100% {width: 100%}
+}
 
 
 
 h1 {
     font-size: $fSizeLarge;
     margin-bottom: 8px;
+    position: relative;
+    width: fit-content;
+}
+h1::before {
+    @include underlineEffectLine(1.5s);
 }
 h2 {
     font-size: $fSizeMedium;
+    position: relative;
+    width: fit-content;
+}
+h2::before {
+    @include underlineEffectLine(2s);
 }
 
-
+/*Set costum font*/
+@font-face {
+    font-family: myFirstFont;
+    src: url(../Font/Outfit-VariableFont.ttf);
+}
+html {
+    font-family: myFirstFont, 'Trebuchet MS', sans-serif;;
+}
 /**/
 body {
     margin: 0;
@@ -105,7 +128,7 @@ body {
     color: $textColor_1;
 
     /*Set main font*/
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: "Outfit" sans-serif;
 }
 
 /*Holds main content*/
@@ -121,7 +144,9 @@ body {
 .logo {
     cursor: pointer;
     margin-top: 0px;
+    margin-bottom: 16px;
     font-size: $fSizeMedium;
+    font-weight: bold;
     width: fit-content;
     height: fit-content;
     position: relative;
@@ -268,12 +293,14 @@ body {
     margin: 0px;
     margin-top: 2px;
 
-    width: 200px;
+    width: 260px;
 }
 /*Card Links*/
 .cardLinksContainer {
     display: flex;
     justify-content: space-around;
+    
+
 
     /*Set margin to auto so card height sizes in each category remains consistent, and on the same level*/
     margin: 0px;
@@ -310,6 +337,8 @@ body {
     flex-flow: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    width: fit-content;
+
 }
 /*Container for main content. Will be in global container to go next to nav bar*/
 .mainContent {
@@ -324,17 +353,17 @@ body {
 .textContent {
     width: $textBoxWidth;
     font-size: $fSizeSmall;
+    color: $textColor_2;
 }
 .headline {
     font-size: $fSizeMedium;
 }
-
-
-.logo::after {
-    @include hoverEffectLine(100%);
-    background-color: white;
-    background-image: none;
+.highlight {
+    color: $backcoundColor;
+    background-color: $textColor_2;
+    font-weight: bold;
 }
+
 
 
 /*/**//**/
@@ -373,5 +402,9 @@ body {
 }
 
 footer {
-    height: 2000px;
+    margin: 0;
+    margin-left: 48px;
+    text-align: right;
+    width: fit-content;
+    margin-bottom: 32px;
 }
