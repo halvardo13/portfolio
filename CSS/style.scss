@@ -103,6 +103,7 @@ h1 {
     margin-top: 0px;
     position: relative;
     width: fit-content;
+    margin-left: 16px;
 }
 h1::before {
     @include underlineEffectLine(1.5s);
@@ -112,6 +113,7 @@ h2 {
     position: relative;
     width: fit-content;
     margin-bottom: 12px;
+    margin-left: 16px;
 }
 h2::before {
     @include underlineEffectLine(2s);
@@ -253,7 +255,7 @@ header {
 
     /*Positioning and some extra space betwenn border*/
     padding: 6px;
-    margin: 8px;
+    margin: 16px;
     position: relative;
     text-align: center;
 }
@@ -356,13 +358,14 @@ header {
     flex-wrap: wrap;
     justify-content: flex-start;
     width: fit-content;
-
+    /*Limit size to keep maximum of 3 games per row*/
+    max-width: 1100px;
 }
 /*Container for main content. Will be in global container to go next to nav bar*/
 main {
     display: flex;
     flex-flow: column;
-    margin-left: 320px;
+    margin-left: 300px;
 
 
 
@@ -371,10 +374,12 @@ main {
     }
 }
 .textContent {
-    width: $textBoxWidth;
+    width: fit-content;
+    max-width: $textBoxWidth;
     font-size: $fSizeSmall;
     color: $textColor_2;
     margin-top: 12px;
+    margin-left: 16px;
 }
 .headline {
     font-size: $fSizeMedium;
@@ -412,8 +417,7 @@ footer {
 }
 
 
-
-
+/*Breakpoints for differing screen sizes*/
 
 
 @media only screen and (max-width: 1500px) {
@@ -422,7 +426,7 @@ footer {
         margin-left: 240px;
     }
 } 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1360px) {
     /*Smaller margin to start main content*/
     main {
         margin-left: 64px;
@@ -445,6 +449,15 @@ footer {
     /*Center content correctly*/
     section {
         align-items: center;
+    }
+    .textContent {
+        margin-left: 0px;
+    }
+    h1 {
+        margin-left: 0px;
+    }
+    h2 {
+        margin-left: 0px;
     }
 } 
 @media only screen and (max-width: 1180px) {

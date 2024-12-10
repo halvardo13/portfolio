@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!---->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!--Link to CSS-->
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <!--Navigation sidebar-->
+    <header>
+        <a href="../index.html" class="logo">Halvardo13</a>
+        <nav class="mainNav">
+            <a href="../index.html" class="navLink">Home</a>
+            <a href="./index_jamGames.html" class="navLink">Games</a>
+            <a href="./index_work.html" class="navLink">Work</a>
+            <a href="./index_contact.html" class="navLink">Contact</a>
+        </nav>
+    </header>
+    <!--Holds all main content-->
+    <main>
+        <section>
+            <h1>WA2: <span style="font-weight: bold;">Accsesability</span></h1>
+            <p class="textContent">Small text about the asignments here</p>
+        </section>
+        <section>
+            <!--written asignment here-->
+            <article>
+                <!--First part-->
+                <h2>Landmarks in code</h2>
+                <p class="textContent">
+                    GameMaker’s homepage is a clear and useable website. However, when inspecting the source
+                    code, it does not fully reflect the clarity of the page. I found that the code uses semantic tags
+                    inconsistently. They use some of the main ones, like nav, footer etc. However, sections are
+                    barley used. When searching for sections at the different subpages, they were used 1 – 4 times
+                    per page. The same issue was for article. Where they linked tutorials, they used article tags.
+                    However, for blogs and article posting, they did not use them. This inconsistency can be
+                    problematic when it comes to accessibility. “Document landmarks are roles that help assistive
+                    technologies understand the role of a section and its relationship to other content on that page.
+                    Kalbag” (2017, 118). I also tested the page with reader view, which struggled finding content, and
+                    left out most things. The site is pretty useable and well made, however still has accessibility
+                    issues for people relying on assistive technology.
+                </p>
+                <p class="textContent">
+                    This inconsistent use of semantic tags can also be an issue for code readability. Where it can
+                    cause confusion when reading and understanding the code. I also found that indentations are
+                    not used effectively, and tags start and end at seemingly random places. Having to search where
+                    tags start, and end should not be the case and can make working with the page needlessly
+                    complicated.
+                </p>
+                <a href="https://csszengarden.com/218/" class="navLink" style="margin: 16px;">
+                    Veiw page
+                </a>
+                <h2>Sources</h2>
+                <p class="textContent">
+                    Kalbag, Laura. 2017. Accessibility for Everyone. Vol. 23. New York: A Book Apart.
+                </p>
+            </article>
+        </section>
+
+        <!--A seperate way for user to return-->
+        <div class="cardContainer">
+            <!--Return back to work page-->
+            <div class="card">
+                <p class="cardName">Return to</p>
+                <div class="cardLinksContainer">
+                    <a href="/portfolio/pages/index_work.html">Work</a>
+                </div>
+            </div>
+            <!--Get original PDF-->
+            <div class="card">
+                <p class="cardName">Original PDF</p>
+                <div class="cardLinksContainer">
+                    <a href="/portfolio/WrittenAsignments/accsesability.pdf" target="_blank">Open</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <!--Footer-->
+    <footer>
+        <p>Halvardo13 <span class="highlight">- 2024 -</span></p>
+    </footer>
+</body>
+</html>

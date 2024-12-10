@@ -40,13 +40,32 @@
             <!-- Run the game code -->
             <script src="html5game/LudumDare54.js?cachebust=420460109"></script>
             <!-- Builtin injector for injecting runner path -->
-            <script>window.onload = GameMaker_Init;</script>            
+            <script>window.onload = GameMaker_Init;</script>
+            <!--
+            Previous section of html is from GameMaker compilation and not by me
+            -->        
         </div>
         <!--Show some information about the game-->
-        <section>
+        <section class="runnerGameInfo">
             <h1>Age of TinyVillage</h1>
             <p class="textContent">Use mouse to place and select buildings or units. Blue units are workers and grey units are soldiers. You can add multiple workers per building to increase the produce speed.</p>
         </section>
+
+
+        <!--A seperate way for user to return-->
+        <div class="cardContainer">
+            <!--Return back to games page-->
+            <div class="card">
+                <p class="cardName">Return to</p>
+                <div class="cardLinksContainer">
+                    <a href="../index_jamGames.html">Games</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
 
     </main>
 
