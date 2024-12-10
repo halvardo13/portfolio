@@ -1,9 +1,11 @@
-
-
+/*Define colors*/
 $backcoundColor : #060309;
 $textColor_1 : #ebe3f4;
 $textColor_2 : #819796;
-
+$gradColor1 : #4158D0;
+$gradColor2 : #C850C0;
+$gradColor3 : #FFCC70;
+$globalGradient : linear-gradient(43deg, $gradColor1 0%, $gradColor2 46%, $gradColor3 100%);
 /*Magins*/
 $navMargin : 128px;
 $mainContentMargingTop : 96px;
@@ -15,29 +17,14 @@ $cardBorderCol : #FFCC70;
 $fSizeSmall : 20px;
 $fSizeMedium : 32px;
 $fSizeLarge : 48px;
-/*Screen adjustment to fonts*/
-$screenfSizeSmall : 20px;
-$screenfSizeMedium : 32px;
-$screenfSizeLarge : 48px;
-
-
-$fSizeLogo : 32px;
-$fSizeNav : 20px;
-$fSizeh1 : 48px;
-
 
 /*Other designs that should remain consistent*/
 $textBoxWidth : 500px;
-
 $borderRad : 4px;
 $lineAndBorderWidth : 2px;
 $transitionSpd : 0.2s;
 
-$gradColor1 : #4158D0;
-$gradColor2 : #C850C0;
-$gradColor3 : #FFCC70;
-$globalGradient : linear-gradient(43deg, $gradColor1 0%, $gradColor2 46%, $gradColor3 100%);
-
+/**/
 @mixin hoverEffectLine($pos) {
     content: "";
     height: 100%;
@@ -69,9 +56,6 @@ $globalGradient : linear-gradient(43deg, $gradColor1 0%, $gradColor2 46%, $gradC
 
     background-color: #4158D0;
     background-image: $globalGradient;
-
-
-
     /*A fade in animation is needed for the this line effect. 
     Without the fade in, clicking links on the nav bar would feel a bit janky since the line would snap 
     instantly and than back again becuse user is still hovering. Fading the line in helped alot.
@@ -82,14 +66,13 @@ $globalGradient : linear-gradient(43deg, $gradColor1 0%, $gradColor2 46%, $gradC
     animation-duration: $animStart;
     animation-fill-mode: forwards;
 }
-
+/*Keyframes to use for animating in the line effects*/
 @keyframes navLineFadein {
     0% {opacity: 0}
     25% {opacity: 0}
     100% {opacity: 100;}
 }
 @keyframes headerLines {
-    /*Delay a small amout from opacity fade*/
     0% {width: 0%}
     75% {width: 0%}
     100% {width: 100%}
@@ -194,6 +177,9 @@ body {
 .navLink:hover {
     background-color: $textColor_1;
     color: $backcoundColor;
+}
+.linkInText {
+    margin: 16px;
 }
 .currentLinkAt {
     color: $gradColor3;
@@ -396,30 +382,37 @@ section {
     flex-flow: column;
 }
 
-
+/*Footer deisgn*/
 footer {
+    display: flex;
     margin: 0;
     margin-left: 48px;
-    text-align: right;
-    width: fit-content;
+    margin-right: 48px;
     margin-bottom: 32px;
+    position: relative;
+    /*Same effect as logo*/
     p {
         position: relative;
         font-size: $fSizeSmall;
-        width: 130px;
+        font-weight: bold;
+        width: fit-content;
+        border-radius: $borderRad;
     }
     p::after {
-        @include hoverEffectLine(0%);
+        @include hoverEffectLine(100%);
+        background-color: white;
+        background-image: none;
     }
     p:hover::after {
-        right: 100%;
+        right: 0%;
+    }
+    p:hover {
+        background-color: $textColor_1;
+        color: $backcoundColor;
     }
 }
 
-
 /*Breakpoints for differing screen sizes*/
-
-
 @media only screen and (max-width: 1500px) {
     /*Smaller margin to start main content*/
     main {
@@ -459,6 +452,9 @@ footer {
     h2 {
         margin-left: 0px;
     }
+    footer {
+        justify-content: center;
+    }
 } 
 @media only screen and (max-width: 1180px) {
     main {
@@ -470,6 +466,9 @@ footer {
     }
     .cardContainer {
         justify-content: center;
+    }
+    .linkInText {
+        margin: 0px;
     }
 }
 @media only screen and (max-width: 630px) {
@@ -489,11 +488,3 @@ footer {
     }
 
 }
-
-/*Breakpoints*/
-@media only screen and (max-width: 600px) {
-    
-}
-@media only screen and (min-width: 600px) {
-    
-} 

@@ -1,8 +1,10 @@
+/*Define colors*/
 /*Magins*/
 /*Cards*/
 /*Define the three main font sizes to keep consistency*/
-/*Screen adjustment to fonts*/
 /*Other designs that should remain consistent*/
+/**/
+/*Keyframes to use for animating in the line effects*/
 @keyframes navLineFadein {
   0% {
     opacity: 0;
@@ -15,7 +17,6 @@
   }
 }
 @keyframes headerLines {
-  /*Delay a small amout from opacity fade*/
   0% {
     width: 0%;
   }
@@ -175,6 +176,10 @@ body {
 .navLink:hover {
   background-color: #ebe3f4;
   color: #060309;
+}
+
+.linkInText {
+  margin: 16px;
 }
 
 .currentLinkAt {
@@ -394,25 +399,30 @@ section {
   flex-flow: column;
 }
 
+/*Footer deisgn*/
 footer {
+  display: flex;
   margin: 0;
   margin-left: 48px;
-  text-align: right;
-  width: -moz-fit-content;
-  width: fit-content;
+  margin-right: 48px;
   margin-bottom: 32px;
+  position: relative;
+  /*Same effect as logo*/
 }
 footer p {
   position: relative;
   font-size: 20px;
-  width: 130px;
+  font-weight: bold;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 4px;
 }
 footer p::after {
   content: "";
   height: 100%;
   width: 2px;
   position: absolute;
-  right: 0%;
+  right: 100%;
   background-color: #4158D0;
   background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
   transition: right 0.2s ease-in-out;
@@ -424,9 +434,15 @@ footer p::after {
   */
   animation-name: navLineFadein;
   animation-duration: 1.5s;
+  background-color: white;
+  background-image: none;
 }
 footer p:hover::after {
-  right: 100%;
+  right: 0%;
+}
+footer p:hover {
+  background-color: #ebe3f4;
+  color: #060309;
 }
 
 /*Breakpoints for differing screen sizes*/
@@ -470,6 +486,9 @@ footer p:hover::after {
   h2 {
     margin-left: 0px;
   }
+  footer {
+    justify-content: center;
+  }
 }
 @media only screen and (max-width: 1180px) {
   main {
@@ -481,6 +500,9 @@ footer p:hover::after {
   }
   .cardContainer {
     justify-content: center;
+  }
+  .linkInText {
+    margin: 0px;
   }
 }
 @media only screen and (max-width: 630px) {
@@ -498,5 +520,4 @@ footer p:hover::after {
     margin-left: 0px;
     margin-top: 32px;
   }
-}
-/*Breakpoints*//*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
