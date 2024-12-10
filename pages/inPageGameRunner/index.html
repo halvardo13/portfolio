@@ -10,175 +10,45 @@
     <link rel="stylesheet" href="/portfolio/CSS/gameRunner.css">
 </head>
 <body>
-    <!--Main container-->
-    
-        <!--Navigation sidebar-->
-        <div class="navAndHome">
-            <a href="/portfolio/index.html" class="logo">Halvardo13</a>
-            <nav class="mainNav">
-                <a href="/portfolio/index.html" class="navLink">Home</a>
-                <a href="../index_jamGames.html" class="navLink">Jam Games</a>
-                <a href="../index_work.html" class="navLink">Work</a>
-                <a href="../index_contact.html" class="navLink">Contact</a>
-            </nav>
-        </div>
+
+    <!--Navigation sidebar-->
+    <header>
+        <a href="/portfolio/index.html" class="logo">Halvardo13</a>
+        <nav class="mainNav">
+            <a href="/portfolio/index.html" class="navLink">Home</a>
+            <a href="../index_jamGames.html" class="navLink">Games</a>
+            <a href="../index_work.html" class="navLink">Work</a>
+            <a href="../index_contact.html" class="navLink">Contact</a>
+        </nav>
+    </header>
 
 
 
 
 
-        <div class="mainContent">
-            <div class="gameRunner">
-                <!--
-                This section of html is from GameMaker compilation and not by me
-                --> 
-                <div class="gm4html5_div_class" id="gm4html5_div_id">
-                    <!-- Create the canvas element the game draws to -->
-                    <canvas class="card" id="canvas" width="320" height="180" >
-                        <p>Your browser doesn't support HTML5 canvas.</p>
-                    </canvas>
-                </div>
-                <!-- Run the game code -->
-                <script src="html5game/LudumDare54.js?cachebust=420460109"></script>
-                <!-- Builtin injector for injecting runner path -->
-                <script>window.onload = GameMaker_Init;</script>            
+    <main>
+        <div class="gameRunner">
+            <!--
+            This section of html is from GameMaker compilation and not by me
+            --> 
+            <div class="gm4html5_div_class" id="gm4html5_div_id">
+                <!-- Create the canvas element the game draws to -->
+                <canvas class="card" id="canvas" width="320" height="180" >
+                    <p>Your browser doesn't support HTML5 canvas.</p>
+                </canvas>
             </div>
-            <!--Show some information about the game-->
-            <section>
-                <h1>Age of TinyVillage</h1>
-                <p class="textContent">Use mouse to place and select buildings or units. Blue units are workers and grey units are soldiers. You can add multiple workers per building to increase the produce speed.</p>
-            </section>
-
+            <!-- Run the game code -->
+            <script src="html5game/LudumDare54.js?cachebust=420460109"></script>
+            <!-- Builtin injector for injecting runner path -->
+            <script>window.onload = GameMaker_Init;</script>            
         </div>
+        <!--Show some information about the game-->
+        <section>
+            <h1>Age of TinyVillage</h1>
+            <p class="textContent">Use mouse to place and select buildings or units. Blue units are workers and grey units are soldiers. You can add multiple workers per building to increase the produce speed.</p>
+        </section>
 
-        
-
-
-
-
-
-
-
-
-
-
-        <!--   
-        <div class="infoContainer">
-                <section>
-                <h1>Commerical games</h1>
-                <p>just random text. just random text. just random text. just random text. just random text. just random text. just random text. just random text. just random text. </p>
-
-
-                <div class="
-                
-                
-                
-                
-                ">
-
-                    <div class="card">
-                        <img src="./IMG/Heros/Ginnung.jpeg" alt="Ginnung hero image">
-                        <p class="cardName">Ginnug</p>
-                        <p class="cardDesc">Short Descrition of gamedd more desctiopnm</p>
-                        <div class="cardLinksContainer">
-                            <a href="">Switch</a>
-                            <a href="">Steam</a>
-                            <a href="">Itch.io</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="./IMG/Heros/Ginnung.jpeg" alt="Ginnung hero image">
-                        <p class="cardName">Ginnug</p>
-                        <p class="cardDesc">Short Descrition of gamedd more desctiopnm</p>
-                        <div class="cardLinksContainer">
-                            <a href="">Switch</a>
-                            <a href="">Steam</a>
-                            <a href="">Itch.io</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="./IMG/Heros/Ginnung.jpeg" alt="Ginnung hero image">
-                        <p class="cardName">Ginnug</p>
-                        <p class="cardDesc">Short Descrition of gamedd more desctiopnm</p>
-                        <div class="cardLinksContainer">
-                            <a href="">Switch</a>
-                            <a href="">Steam</a>
-                            <a href="">Itch.io</a>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <h1>Donec <span style="font-weight: bold;">ferme</span> ntum dolor </h1>
-            <p>just random text. just random text. just random text. just random text. just random text. just random text. just random text. just random text. just random text. </p>
-            <h2>title 2</h2>
-            <p>text text text text text text text text text text text text text text text text text text text text text text text text</p>
-            <h2>title 2</h2>
-            <p>just random text. just random text. just random text. just random text. just random text. just random text. just random text. just random text. just random text. </p>
-            <h2>title 2</h2>
-            <p>tDuis tortor lacus, eleifend eu ullamcorper ac, euismod eu nunc. Cras congue, sapien suscipit scelerisque lobortis, diam nisl ultricies dolor, vitae varius lacus sapien eget dui. Nam congue suscipit urna, nec elementum turpis consectetur vitae. Vestibulum tristique viverra tellus fringilla ullamcorper. Vestibulum nec nibh libero. Sed lobortis eget eros id faucibus. Aliquam vehicula sem congue odio egestas luctus quis id ex. Etiam lobortis malesuada volutpat. Morbi sed nulla quis purus commodo volutpat fermentum ut sem. Maecenas faucibus iaculis tellus. Nunc luctus augue dolor, ut molestie mauris dignissim sed. </p>
-            <h2>title 2</h2>
-            <p>text text text text text text text text text text text text text text text text text text text text text text text text</p>
-            <h2>title 2</h2>
-            <p>text text text text text text text text text text text text text text text text text text text text text text text text</p>
-        </div>
-        
--->
-
-
-
-        <!--
-
-
-        <div class="card">
-            <img src="./IMG/Heros/Ginnung.jpeg" alt="Ginnung hero image">
-            <p class="cardName">Ginnug</p>
-            <p class="cardDesc">Short Descrition of gamedd more desctiopnm</p>
-            <div class="cardLinksContainer">
-                <a href="">Switch</a>
-                <a href="">Steam</a>
-                <a href="">Itch.io</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="./IMG/Heros/Ginnung.jpeg" alt="Ginnung hero image">
-            <p class="cardName">Ginnug</p>
-            <p class="cardDesc">Short Descrition of gamedd more desctiopnm</p>
-            <div class="cardLinksContainer">
-                <a href="">Switch</a>
-                <a href="">Steam</a>
-                <a href="">Itch.io</a>
-            </div>
-        </div>
-        <div class="card">
-            <p class="cardName">CSS variability</p>
-            <p class="cardDesc">Short Descrition of gamedd more desctiopnm</p>
-            <div class="cardLinksContainer">
-                <a href="">Veiw</a>
-            </div>
-        </div>
-
-
-        -->
-
-
-        <!--
-        <div class="selectorCard">
-            <p class="selectorTitle">Name here</p>
-            <p>and info</p>
-        </div>
-        <div class="selectorCard">
-            <p class="selectorTitle">CSS variablility</p>
-            <p>coding asignment 1</p>
-        </div>
-
-        -->
-    
-
-
-
-
+    </main>
 
     <footer>
 

@@ -1,6 +1,7 @@
 /*Magins*/
 /*Cards*/
 /*Define the three main font sizes to keep consistency*/
+/*Screen adjustment to fonts*/
 /*Other designs that should remain consistent*/
 @keyframes navLineFadein {
   0% {
@@ -28,6 +29,7 @@
 h1 {
   font-size: 48px;
   margin-bottom: 8px;
+  margin-top: 0px;
   position: relative;
   width: -moz-fit-content;
   width: fit-content;
@@ -56,6 +58,7 @@ h2 {
   position: relative;
   width: -moz-fit-content;
   width: fit-content;
+  margin-bottom: 12px;
 }
 
 h2::before {
@@ -176,13 +179,14 @@ body {
   color: #FFCC70;
 }
 
-.navAndHome {
+header {
+  display: flex;
   position: sticky;
   top: 0;
   margin: 48px;
   margin-top: 48px;
 }
-.navAndHome a {
+header a {
   text-decoration: none;
   color: #ebe3f4;
 }
@@ -195,7 +199,7 @@ body {
   position: absolute;
   /*border-right: 2px solid;*/
   width: 130px;
-  margin-top: 0;
+  margin-top: 48px;
   /*margin-left: calc($navMargin - 8px)/*navMargin - padding*/
   /*margin-right: $navMargin;*/
   padding-left: 8px;
@@ -246,15 +250,17 @@ body {
   margin: 8px;
   position: relative;
   text-align: center;
-  /*Keep images in a conisten style within cards*/
 }
-.card .imgHero {
+
+/*Keep images in a conisten style within cards*/
+.imgHero {
   width: 320px;
   height: 180px;
   border-radius: 4px;
   box-shadow: 0px 0px 40px -20px black;
 }
-.card .imgJam {
+
+.imgJam {
   width: 315px;
   height: 250px;
   border-radius: 4px;
@@ -350,10 +356,12 @@ body {
 }
 
 /*Container for main content. Will be in global container to go next to nav bar*/
-.mainContent {
+main {
+  display: flex;
+  flex-flow: column;
   margin-left: 320px;
 }
-.mainContent h1 {
+main h1 {
   font-weight: normal;
 }
 
@@ -361,6 +369,7 @@ body {
   width: 500px;
   font-size: 20px;
   color: #819796;
+  margin-top: 12px;
 }
 
 .headline {
@@ -373,37 +382,9 @@ body {
   font-weight: bold;
 }
 
-/*/**/ /**/
-/*Holds main infomation at middle*/
-.infoContainer {
-  width: 1200px;
-  margin-top: 96px;
-}
-.infoContainer h1 {
-  margin-top: 0px;
-  font-weight: normal;
-}
-
-.selectorCard {
-  width: 320px;
-  height: 180px;
-  border-radius: 4px;
-  margin: 8px;
-  background-color: grey;
-}
-.selectorCard p {
-  display: inline-block;
-  margin-left: 4px;
-  margin-top: 4px;
-  font-size: 20px;
-}
-
-.selectorTitle {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 16px;
-  margin-left: 4px;
-  margin-bottom: 4px;
+section {
+  display: flex;
+  flex-flow: column;
 }
 
 footer {
@@ -439,4 +420,66 @@ footer p::after {
 }
 footer p:hover::after {
   right: 100%;
-}/*# sourceMappingURL=style.css.map */
+}
+
+@media only screen and (max-width: 1500px) {
+  /*Smaller margin to start main content*/
+  main {
+    margin-left: 240px;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  /*Smaller margin to start main content*/
+  main {
+    margin-left: 64px;
+  }
+  /*Change flex flow of navbar*/
+  .mainNav {
+    flex-flow: row;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: 200px;
+    margin-top: 0px;
+  }
+  /*Move navbar up and to the side*/
+  header {
+    position: relative;
+    justify-content: flex-start;
+  }
+  main {
+    align-items: center;
+  }
+  /*Center content correctly*/
+  section {
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 1180px) {
+  main {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  header {
+    margin-left: 20px;
+  }
+  .cardContainer {
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 630px) {
+  .textContent {
+    width: 100%;
+  }
+  /*Center navbar*/
+  header {
+    margin-left: 48px;
+    align-items: center;
+    flex-flow: column;
+  }
+  .mainNav {
+    align-items: center;
+    margin-left: 0px;
+    margin-top: 32px;
+  }
+}
+/*Breakpoints*//*# sourceMappingURL=style.css.map */

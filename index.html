@@ -9,50 +9,64 @@
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
-    <!--Navigation sidebar-->
-    <div class="navAndHome">
+    <!--Heading and navigation-->
+    <header class="navAndHome">
         <a href="./index.html" class="logo">Halvardo13</a>
         <nav class="mainNav">
             <a href="./index.html" class="navLink"><p>>Home</p></a>
-            <a href="./pages/index_jamGames.html" class="navLink">Jam Games</a>
+            <a href="./pages/index_jamGames.html" class="navLink">Games</a>
             <a href="./pages/index_work.html" class="navLink">Work</a>
             <a href="./pages/index_contact.html" class="navLink">Contact</a>
         </nav>
-    </div>
-    <!--Holds all main content-->
-    <div class="mainContent">
-        <section>
-            <h1>Hello, and <span style="font-weight: bold;">welcome!</span></h1>
-            <p class="textContent">I am a solo indie game developer with a focus on creating <span class="highlight">cool and creative games.</span> I do all the work from art and design to programming and implementation. So far I have developed and published 2 titles avalible on Steam and Nintendo Switch. And I am currently working on the third game!</p>
-        </section>
-
-
+    </header>
+    <!--Main-->
+    <main>
+        <!--Heading and welcome text-->
+        <h1>Hello, and <span style="font-weight: bold;">welcome!</span></h1>
+        <p class="textContent">I am a solo indie game developer with a focus on creating 
+            <span class="highlight">cool and creative games.</span> I do all the work 
+            from art and design to programming and implementation. So far I have developed 
+            and published 2 titles avalible on Steam and Nintendo Switch. And I am currently 
+            working on the third game!
+        </p>
+        <!--Section on main games-->
         <section>
             <!--Show games-->
             <h2>Main Games</h2>
+            <!--Cards-->
             <div class="cardContainer">
+                <!--Game: No Sweet Looks-->
                 <div class="card">
-                    <img class="imgHero" src="./IMG/Heros/nosw.png" alt="Ginnung hero image">
+                    <img class="imgHero" src="./IMG/Heros/nosw.png" alt="No Sweet Look hero image">
                     <p class="cardName">No Sweet Looks</p>
                     <p class="cardDesc">Short Descrition of gamedd more desctiopnm but it is also alot longer how does it look</p>
                     <div class="cardLinksContainer">
                         <a href="">In Development</a>
                     </div>
                 </div>
+                <!--Game: Ginnung-->
                 <div class="card">
                     <img class="imgHero" src="./IMG/Heros/Ginnung.jpeg" alt="Ginnung hero image">
                     <p class="cardName">Ginnug</p>
-                    <p class="cardDesc">You find yourself trapped in a void of Norse spirits, who are out to help you… or destroy you. Find your escape in this tight platformer with emphasis on speedrunning. Use the simple but versatile movement to the best of your ability! </p>
+                    <p class="cardDesc">You find yourself trapped in a void of Norse spirits, 
+                        who are out to help you… or destroy you. Find your escape in this 
+                        tight platformer with emphasis on speedrunning. Use the simple but 
+                        versatile movement to the best of your ability! 
+                    </p>
                     <div class="cardLinksContainer">
                         <a href="">Switch</a>
                         <a href="">Steam</a>
                         <a href="">Itch.io</a>
                     </div>
                 </div>
+                <!--Game: Fusion SHIFT-->
                 <div class="card">
                     <img class="imgHero" src="./IMG/Heros/fusion_shift.png" alt="Fusion Shift hero image">
                     <p class="cardName">Fusion SHIFT</p>
-                    <p class="cardDesc">Control your enemies and eliminate them as fast as possible. You are an alien from outer space with a unique skill: Controlling the minds of your foes and use their skills to your advantage! </p>
+                    <p class="cardDesc">Control your enemies and eliminate them as fast as 
+                        possible. You are an alien from outer space with a unique skill: 
+                        Controlling the minds of your foes and use their skills to your advantage! 
+                    </p>
                     <div class="cardLinksContainer">
                         <a href="">Switch</a>
                         <a href="">Steam</a>
@@ -60,57 +74,46 @@
                     </div>
                 </div>
             </div>
-            <!--end card-->
+            <!--End Cards-->
+            <!---->
             <h2>Comleting projects</h2>
-            <p class="textContent">text on completing projects </p>
+            <p class="textContent">text on cus, in tincidunt magna est sed lorem. Curabitur a interdum est. Etiam ut est eget sapien vehicula vehicula. In euismod, loreompleting projects </p>
         </section>
+        <!--Section on skillsets-->
         <section>
             <h2>Skillset</h2>
             <p class="textContent">nia lectus, in tincidunt magna est sed lorem. Curabitur a interdum est. Etiam ut est eget sapien vehicula vehicula. In euismod, lorem id molestie </p>
-                <div class="cardContainer">
-                    <div class="card">
-                        <p class="cardName">Engines / Tools</p>
-                        <p class="cardDesc">GameMaker</p>
-                        <p class="cardDesc">Unity</p>
-                        <p class="cardDesc">GitHub</p>
-                        <p class="cardDesc">Aseprite</p>
-                    </div>
-                    <div class="cardContainer">
-                    <div class="card">
-                        <p class="cardName">Programming</p>
-                        <p class="cardDesc">GML</p>
-                        <p class="cardDesc">C#</p>
-                        <p class="cardDesc">HTML</p>
-                        <p class="cardDesc">CSS</p>
-                        <p class="cardDesc">JavaScript</p>
-                    </div>
-                    <div class="card">
-                        <p class="cardName">Feilds</p>
-                        <p class="cardDesc">Game design</p>
-                        <p class="cardDesc">Game programming</p>
-                        <p class="cardDesc">Pixel art</p>
-                        <p class="cardDesc">Web design</p>
-                    </div>
+            <!--Cards-->
+            <div class="cardContainer">
+                <!--Content: tools-->
+                <div class="card">
+                    <p class="cardName">Engines / Tools</p>
+                    <p class="cardDesc">GameMaker</p>
+                    <p class="cardDesc">Unity</p>
+                    <p class="cardDesc">GitHub</p>
+                    <p class="cardDesc">Aseprite</p>
+                </div>
+                <!--Content: programming-->
+                <div class="card">
+                    <p class="cardName">Programming</p>
+                    <p class="cardDesc">GML</p>
+                    <p class="cardDesc">C#</p>
+                    <p class="cardDesc">HTML</p>
+                    <p class="cardDesc">CSS</p>
+                    <p class="cardDesc">JavaScript</p>
+                </div>
+                <!--Content: feilds-->
+                <div class="card">
+                    <p class="cardName">Feilds</p>
+                    <p class="cardDesc">Game design</p>
+                    <p class="cardDesc">Game programming</p>
+                    <p class="cardDesc">Pixel art</p>
+                    <p class="cardDesc">Web design</p>
                 </div>
             </div>
-        
+            <!--End Cards-->
         </section>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </main>
     <!--Footer-->
     <footer>
         <p>Halvardo13<span class="highlight">2024</span></p>
