@@ -182,6 +182,10 @@ body {
   margin: 48px;
   margin-top: 48px;
 }
+.navAndHome a {
+  text-decoration: none;
+  color: #ebe3f4;
+}
 
 /*Main navigation bar*/
 .mainNav {
@@ -190,8 +194,7 @@ body {
   /*Set to absolute so main content can be placed next to it*/
   position: absolute;
   /*border-right: 2px solid;*/
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 130px;
   margin-top: 0;
   /*margin-left: calc($navMargin - 8px)/*navMargin - padding*/
   /*margin-right: $navMargin;*/
@@ -245,9 +248,15 @@ body {
   text-align: center;
   /*Keep images in a conisten style within cards*/
 }
-.card img {
+.card .imgHero {
   width: 320px;
   height: 180px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 40px -20px black;
+}
+.card .imgJam {
+  width: 315px;
+  height: 250px;
   border-radius: 4px;
   box-shadow: 0px 0px 40px -20px black;
 }
@@ -404,4 +413,30 @@ footer {
   width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 32px;
+}
+footer p {
+  position: relative;
+  font-size: 20px;
+  width: 130px;
+}
+footer p::after {
+  content: "";
+  height: 100%;
+  width: 2px;
+  position: absolute;
+  right: 0%;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  transition: right 0.2s ease-in-out;
+  transition-delay: 0.05s;
+  transform: scaleY(0.9);
+  /*A fade in animation is needed for the this line effect. 
+  Without the fade in, clicking links on the nav bar would feel a bit janky since the line would snap 
+  instantly and than back again becuse user is still hovering. Fading the line in helped alot.
+  */
+  animation-name: navLineFadein;
+  animation-duration: 1.5s;
+}
+footer p:hover::after {
+  right: 100%;
 }/*# sourceMappingURL=style.css.map */

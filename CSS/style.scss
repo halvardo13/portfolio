@@ -196,6 +196,13 @@ body {
     top: 0;
     margin: 48px;
     margin-top: 48px;
+
+
+    a {
+        text-decoration: none;
+        color: $textColor_1;
+    }
+
 }
 /*Main navigation bar*/
 .mainNav {
@@ -206,7 +213,7 @@ body {
 
     /*border-right: 2px solid;*/
 
-    width: fit-content;
+    width: 130px;
     
     margin-top: 0;
     /*margin-left: calc($navMargin - 8px)/*navMargin - padding*/;
@@ -245,9 +252,15 @@ body {
     text-align: center;
 
     /*Keep images in a conisten style within cards*/
-    img {
+    .imgHero {
         width: 320px;
         height: 180px;
+        border-radius: $borderRad;
+        box-shadow: 0px 0px 40px -20px black;
+    }
+    .imgJam {
+        width: 315px;
+        height: 250px;
         border-radius: $borderRad;
         box-shadow: 0px 0px 40px -20px black;
     }
@@ -407,4 +420,15 @@ footer {
     text-align: right;
     width: fit-content;
     margin-bottom: 32px;
+    p {
+        position: relative;
+        font-size: $fSizeSmall;
+        width: 130px;
+    }
+    p::after {
+        @include hoverEffectLine(0%);
+    }
+    p:hover::after {
+        right: 100%;
+    }
 }
