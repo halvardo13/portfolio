@@ -1,6 +1,11 @@
 .gameRunner {
     margin-bottom: 780px;
 }
+@media only screen and (max-width: 1400px) {
+    .gameRunner {
+        display: none;
+    }
+}
 /*
 CSS under here is from GameMaker compilation and not by me.
 (exept from box-shadow)
@@ -51,3 +56,6 @@ div.gm4html5_login_header {
     text-align: center;
 }
 /* END - Custom Runner Styles */
+
+
+
