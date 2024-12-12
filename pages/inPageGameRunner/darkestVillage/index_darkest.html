@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!---->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!--Link to CSS-->
+    <link rel="stylesheet" href="/portfolio/CSS/style.css">
+    <link rel="stylesheet" href="/portfolio/CSS/gameRunner.css">
+</head>
+<body>
+    <!--Navigation sidebar-->
+    <header>
+        <a href="/portfolio/index.html" class="logo">Halvardo13</a>
+        <nav class="mainNav">
+            <a href="/portfolio/index.html" class="navLink">Home</a>
+            <a href="/portfolio/pages/index_jamGames.html" class="navLink">Games</a>
+            <a href="/portfolio/pages/index_work.html" class="navLink">Work</a>
+            <a href="/portfolio/pages/index_contact.html" class="navLink">Contact</a>
+        </nav>
+    </header>
+    <!--Main-->
+    <main>
+        <div class="gameRunner">
+            <!--
+            This section of html is from GameMaker compilation and not by me
+            --> 
+            <div class="gm4html5_div_class" id="gm4html5_div_id">
+                <!-- Create the canvas element the game draws to -->
+                <canvas class="card" id="canvas" width="320" height="180" >
+                    <p>Your browser doesn't support HTML5 canvas.</p>
+                </canvas>
+            </div>
+            <!-- Run the game code -->
+            <script src="html5game/dikult eksamen.js?cachebust=2123199247"></script>
+            <!-- Builtin injector for injecting runner path -->
+            <script>window.onload = GameMaker_Init;</script>
+            <!--
+            Previous section of html is from GameMaker compilation and not by me
+            -->        
+        </div>
+        <!--Show some information about the game-->
+        <section class="runnerGameInfo">
+            <p class="textContent warning">This game is only playable on desktop. Maximize window if you are on desktop.</p>
+            <h1>Darkest Village</h1>
+            <p class="textContent">Explore a world </p>
+        </section>
+
+        <!--A seperate way for user to return-->
+        <div class="cardContainer">
+            <!--Return back to games page-->
+            <div class="card">
+                <p class="cardName">Return to</p>
+                <div class="cardLinksContainer">
+                    <a href="/portfolio/pages/index_jamGames.html">Games</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!---->
+    <footer>
+
+    </footer>
+</body>
+</html>

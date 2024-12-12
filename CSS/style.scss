@@ -54,53 +54,42 @@ $transitionSpd : 0.2s;
 
     bottom: 0;
 
+    /*Create gradient*/
     background-color: #4158D0;
     background-image: $globalGradient;
-    /*A fade in animation is needed for the this line effect. 
+    /*
+    A fade in animation is needed for the this line effect. 
     Without the fade in, clicking links on the nav bar would feel a bit janky since the line would snap 
     instantly and than back again becuse user is still hovering. Fading the line in helped alot.
     */
-    animation-name: navLineFadein;
-    animation-duration: 1.5s;
+
+    /*Draw from left to right animation*/
     animation-name: headerLines;
     animation-duration: $animStart;
     animation-fill-mode: forwards;
 }
 /*Keyframes to use for animating in the line effects*/
 @keyframes navLineFadein {
-    0% {opacity: 0}
-    25% {opacity: 0}
-    100% {opacity: 100;}
+    0% {opacity: 0};
+    25% {opacity: 0};
+    100% {opacity: 100};
 }
 @keyframes headerLines {
-    0% {width: 0%}
-    75% {width: 0%}
-    100% {width: 100%}
+    0% {width: 0%};
+    75% {width: 0%};
+    100% {width: 100%};
 }
-
-
-
-h1 {
-    font-size: $fSizeLarge;
-    margin-bottom: 8px;
-    margin-top: 0px;
-    position: relative;
-    width: fit-content;
-    margin-left: 16px;
+/*
+I tested using clip-path to animate in the border gradient. Similar to the underline animation.
+However it was to much going on and did not look good.
+@keyframes borderClipAnimation {
+    0% {clip-path: circle(0%)};
+    100% {clip-path: circle(100%)};
 }
-h1::before {
-    @include underlineEffectLine(1.5s);
-}
-h2 {
-    font-size: $fSizeMedium;
-    position: relative;
-    width: fit-content;
-    margin-bottom: 12px;
-    margin-left: 16px;
-}
-h2::before {
-    @include underlineEffectLine(2s);
-}
+    0% {clip-path: polygon(100% 0%, 100% 0%, 100% 0%, 50% 50%)};
+    25% {clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 50%)};
+    100% {clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)};
+*/
 
 /*Set costum font*/
 @font-face {
@@ -110,7 +99,7 @@ h2::before {
 html {
     font-family: myFirstFont, 'Trebuchet MS', sans-serif;;
 }
-/**/
+/*Set standard styling*/
 body {
     margin: 0;
     /*Set colors*/
@@ -120,33 +109,47 @@ body {
     /*Set main font*/
     font-family: "Outfit" sans-serif;
 }
-
-/*Holds main content*/
-.globalContainer {
-    display: flex;
-    align-items: flex-start;
-    justify-content:flex-start;
-    flex-wrap: wrap;
-    margin: 48px;
-    margin-top: 64px;
-    
+/*Style h1, and add underline effect*/
+h1 {
+    font-size: $fSizeLarge;
+    position: relative;
+    width: fit-content;
+    margin: 0px 0px 8px 16px
 }
+h1::before {
+    @include underlineEffectLine(1.5s);
+}
+/*Style h2, and underline effect with delay*/
+h2 {
+    font-size: $fSizeMedium;
+    position: relative;
+    width: fit-content;
+    margin: 20px 0px 12px 16px 
+}
+h2::before {
+    @include underlineEffectLine(2s);
+}
+
+/*Style the text 'logo', which is placed above nav*/
 .logo {
     cursor: pointer;
-    margin-top: 0px;
-    margin-bottom: 16px;
+    /*Font*/
     font-size: $fSizeMedium;
     font-weight: bold;
-    width: fit-content;
-    height: fit-content;
+
+    /*Positioning*/
     position: relative;
+    margin-bottom: 16px;
     padding-right: 8px;
     padding-left: 8px;
 
-
+    /**/
+    width: fit-content;
+    height: fit-content;
     border-radius: $borderRad;
 }
 .logo::after {
+    /*Add line hover effect, and change gradient to white*/
     @include hoverEffectLine(100%);
     background-color: white;
     background-image: none;
@@ -158,68 +161,66 @@ body {
     background-color: $textColor_1;
     color: $backcoundColor;
 }
-/*Links in navigation*/
+/*Styling for links inside of nav bar (can be used for general links aswell)*/
 .navLink {
     cursor: pointer;
-    color: $textColor_1;
+    /*Font*/
     font-size: $fSizeSmall;
     font-weight: bold;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    width: fit-content;
-    padding: 4px;
     text-decoration: none;
-
+    /*Styling*/
+    color: $textColor_1;
     border-radius: $borderRad;
-
+    /**/
+    margin: 0px 8px 0px 8px;
+    padding: 4px;
+    width: fit-content;
+    /*Set animation speed*/
     transition: $transitionSpd;
 }
 .navLink:hover {
+    /*Hover effect*/
     background-color: $textColor_1;
     color: $backcoundColor;
 }
+/*When nav links are used in text, they need different margins for small screens which this class handels*/
 .linkInText {
     margin: 16px;
 }
-.currentLinkAt {
-    color: $gradColor3;
-}
+/*Contains logo and nav bar*/
 header {
     display: flex;
+    /*Stick to screen*/
     position: sticky;
     top: 0;
     margin: 48px;
-    margin-top: 48px;
-
-
+    /*Fix link color in header*/
     a {
         text-decoration: none;
         color: $textColor_1;
     }
-
 }
 /*Main navigation bar*/
 .mainNav {
+    /*Holds all navigation links*/
     display: flex;
     flex-flow: column;
-    /*Set to absolute so main content can be placed next to it*/
+    /*Set to absolute so main content can be placed next to navigation*/
     position: absolute;
-
-    /*border-right: 2px solid;*/
-
+    /*Set the width. This defines where the line hover effect is placed*/
     width: 130px;
-    
+    /*Positoning*/
     margin-top: 48px;
-    /*margin-left: calc($navMargin - 8px)/*navMargin - padding*/;
-    /*margin-right: $navMargin;*/
     padding-left: 8px;
     padding-right: 16px;
+    /*Removes margin for the link the user is currently veiwing*/
     p {
         margin: 0;
         text-decoration: underline;
     }
 }
 .mainNav::after {
+    /*Add the hover line effect*/
     @include hoverEffectLine(0%);
 }
 .mainNav:hover::after {
@@ -234,7 +235,7 @@ header {
     /*Set to fit-content to keep size anywhere*/
     width: fit-content;
     
-
+    /*Colors*/
     background-color: $backcoundColor;
     color: $textColor_2;
     border-radius: $borderRad;
@@ -245,74 +246,82 @@ header {
     position: relative;
     text-align: center;
 }
-/*Keep images in a conisten style within cards*/
+.card:hover {
+    /*Highlight text in card that user is hovering*/
+    color: $textColor_1;
+}
+.card::before {
+    content: "";
+    /*Adds a new element behind card which is applied the gradient. Adding negativ margin creates the gradient border effect*/
+    /*Set background*/
+    background-image: $globalGradient;
+    border-radius: $borderRad;
+    box-shadow: 0px 0px 70px -50px $gradColor1;
+    /*Put behind*/
+    z-index: -1;
+    /*Overflow to look like border*/
+    margin: -$lineAndBorderWidth;
+    /*Position same as card*/
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    /**/
+    transition : box-shadow $transitionSpd;
+
+
+
+}
+.card:hover::before {
+    /*Highligth border of the card user is hovering, and remove the shadow*/
+    background-image: none;
+    background-color: $gradColor3;
+    box-shadow: none;
+}
+/*Keeps images the same size for all main games. Images needs to fit this ratio so it does not look stretched*/
 .imgHero {
     width: 320px;
     height: 180px;
     border-radius: $borderRad;
     box-shadow: 0px 0px 40px -20px black;
 }
+/*Images for the smaller games have slightly different ratios*/
 .imgJam {
     width: 315px;
     height: 250px;
     border-radius: $borderRad;
     box-shadow: 0px 0px 40px -20px black;
 }
-.card:hover {
-    color: $textColor_1;
-}
-.card::before {
-    content: "";
-    /*Add a new element to act as a border with gradient*/
-    /*Set background*/
-    background-image: $globalGradient;
-    border-radius: $borderRad;
-    /*Put behind*/
-    z-index: -1;
-    /*Overflow to look like border*/
-    margin: -$lineAndBorderWidth;
-    /*Position same*/
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    box-shadow: 0px 0px 70px -50px $gradColor1;
-    transition : box-shadow $transitionSpd;
-}
-.card:hover::before {
-    background-image: none;
-    background-color: $gradColor3;
-    box-shadow: none;
-}
-/*Text elements in card*/
+/*Headline / name for card*/
 .cardName {
-    margin: 0px;
-    margin-top: 10px;
+    /*Slight margin to top only*/
+    margin: 10px 0px 0px 0px;
+    /*font*/
     font-size: $fSizeMedium;
     font-weight: bold;
-    
-    /*Add gradient to card name*/
+    /*Add gradient to card name to make it stand out*/
     background-image: $globalGradient;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .cardDesc {
-    margin: 0px;
-    margin-top: 2px;
-
+    /*Sligth margin to seperate from name*/
+    margin: 4px 0px 0px 0px;
+    /*Define width size of text content in cards. 
+    If card does not contain any image this or the card name will be the width of card. 
+    Depening on which is bigger*/
     width: 260px;
 }
 /*Card Links*/
 .cardLinksContainer {
+    /*Set to flex*/
     display: flex;
     justify-content: space-around;
     
-
-
-    /*Set margin to auto so card height sizes in each category remains consistent, and on the same level*/
+    /*Set margin-top to auto so card height sizes in each category remains consistent, and on the same level*/
     margin: 0px;
     margin-top: auto;
-
     width: 220px;
+    /*Button desing for links - exclusivly used in cards*/
     a {
         font-size: $fSizeSmall;
         font-weight: bold;
@@ -333,8 +342,6 @@ header {
     a:hover {
         background-color: $textColor_1;
         color: $backcoundColor;
-
-        
     }
 }
 /*Container to hold cards*/
@@ -347,18 +354,17 @@ header {
     /*Limit size to keep maximum of 3 games per row*/
     max-width: 1100px;
 }
-/*Container for main content. Will be in global container to go next to nav bar*/
+/*Main is flex so centent is placed correctly. And for responsivity*/
 main {
     display: flex;
     flex-flow: column;
-    margin-left: 300px;
-
-
-
+    /*Seperate itself from nav bar*/
+    margin-left: 240px;
     h1 {
         font-weight: normal;
     }
 }
+/*Class for all text content that is under a heading. (not used for text in cards)*/
 .textContent {
     width: fit-content;
     max-width: $textBoxWidth;
@@ -367,21 +373,17 @@ main {
     margin-top: 12px;
     margin-left: 16px;
 }
-.headline {
-    font-size: $fSizeMedium;
-}
+/*Highligt text in text content for style*/
 .highlight {
     color: $backcoundColor;
     background-color: $textColor_2;
     font-weight: bold;
 }
-
-
+/*Section as flex is needed for centering at smaller screen sizes*/
 section {
     display: flex;
     flex-flow: column;
 }
-
 /*Footer deisgn*/
 footer {
     display: flex;
@@ -411,14 +413,12 @@ footer {
         color: $backcoundColor;
     }
 }
+/*End of defined classes*/
+/*Responsivity adjustments starts here*/
 
-/*Breakpoints for differing screen sizes*/
-@media only screen and (max-width: 1500px) {
-    /*Smaller margin to start main content*/
-    main {
-        margin-left: 240px;
-    }
-} 
+/*First breakpoint
+Page reads from center instead of left
+*/
 @media only screen and (max-width: 1360px) {
     /*Smaller margin to start main content*/
     main {
@@ -436,13 +436,23 @@ footer {
         position: relative;
         justify-content: flex-start;
     }
+    /*Center everyting in main*/
     main {
         align-items: center;
+        margin-left: 16px;
+        margin-right: 16px;
     }
     /*Center content correctly*/
     section {
         align-items: center;
     }
+    footer {
+        justify-content: center;
+    }
+    .cardContainer {
+        justify-content: center;
+    }
+    /*Removes margins needed for full veiw*/
     .textContent {
         margin-left: 0px;
     }
@@ -452,30 +462,22 @@ footer {
     h2 {
         margin-left: 0px;
     }
-    footer {
-        justify-content: center;
-    }
     .linkInText {
         margin: 0px;
     }
-} 
-@media only screen and (max-width: 1180px) {
-    main {
-        margin-left: 16px;
-        margin-right: 16px;
-    }
+    /*Smaller margin for logo and nav bar*/
     header {
         margin-left: 20px;
     }
-    .cardContainer {
-        justify-content: center;
-    }
-}
+} 
+
+/*Second breakpoint*/
 @media only screen and (max-width: 630px) {
+    /*Allow more space for text to be displayed*/
     .textContent {
         width: 100%;
     }
-    /*Center navbar*/
+    /*Center navbar, and place logo above it*/
     header {
         margin-left: 48px;
         align-items: center;
