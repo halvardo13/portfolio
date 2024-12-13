@@ -336,7 +336,7 @@ header a {
 
 .cardDesc {
   /*Sligth margin to seperate from name*/
-  margin: 4px 0px 0px 0px;
+  margin: 4px 0px 4px 0px;
   /*Define width size of text content in cards. 
   If card does not contain any image this or the card name will be the width of card. 
   Depening on which is bigger*/
