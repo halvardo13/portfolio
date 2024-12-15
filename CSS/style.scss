@@ -14,7 +14,7 @@ $mainContentMargingTop : 96px;
 $cardBorderCol : #FFCC70;
 
 /*Define the three main font sizes to keep consistency*/
-$fSizeSmall : 20px;
+$fSizeSmall : 26px;
 $fSizeMedium : 32px;
 $fSizeLarge : 48px;
 
@@ -79,18 +79,6 @@ $transitionSpd : 0.2s;
     75% {width: 0%};
     100% {width: 100%};
 }
-/*
-I tested using clip-path to animate in the border gradient. Similar to the underline animation.
-However it was to much going on and did not look good.
-@keyframes borderClipAnimation {
-    0% {clip-path: circle(0%)};
-    100% {clip-path: circle(100%)};
-}
-    0% {clip-path: polygon(100% 0%, 100% 0%, 100% 0%, 50% 50%)};
-    25% {clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 50%)};
-    100% {clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)};
-*/
-
 /*Set costum font*/
 @font-face {
     font-family: myFirstFont;
@@ -128,8 +116,7 @@ h2 {
 }
 h2::before {
     @include underlineEffectLine(2s);
-}
-
+} 
 /*Style the text 'logo', which is placed above nav*/
 .logo {
     cursor: pointer;
@@ -139,9 +126,7 @@ h2::before {
 
     /*Positioning*/
     position: relative;
-    margin-bottom: 16px;
-    padding-right: 8px;
-    padding-left: 8px;
+    margin: 0 8px 16px 8px;
 
     /**/
     width: fit-content;
@@ -193,7 +178,8 @@ header {
     /*Stick to screen*/
     position: sticky;
     top: 0;
-    margin: 48px;
+    /*margin. Bottoms defines how far down the main content on page starts*/
+    margin: 48px 48px 8px 48px;
     /*Fix link color in header*/
     a {
         text-decoration: none;
@@ -239,6 +225,8 @@ header {
     background-color: $backcoundColor;
     color: $textColor_2;
     border-radius: $borderRad;
+    font-size: $fSizeSmall;
+
 
     /*Positioning and some extra space betwenn border*/
     padding: 6px;
@@ -378,6 +366,8 @@ main {
     color: $backcoundColor;
     background-color: $textColor_2;
     font-weight: bold;
+    animation-name: navLineFadein;
+    animation-duration: 1.5s;
 }
 /*Section as flex is needed for centering at smaller screen sizes*/
 section {
@@ -387,12 +377,17 @@ section {
 /*Footer deisgn*/
 footer {
     display: flex;
-    margin: 0;
-    margin-left: 48px;
-    margin-right: 48px;
-    margin-bottom: 32px;
+    flex-flow: column;
+    margin: 48px;
     position: relative;
+    p {
+        font-size: $fSizeSmall;
+        font-weight: bold;
+        margin: 0;
+        color: $textColor_2;
+    }
     /*Same effect as logo*/
+    /*
     p {
         position: relative;
         font-size: $fSizeSmall;
@@ -412,6 +407,7 @@ footer {
         background-color: $textColor_1;
         color: $backcoundColor;
     }
+    */
 }
 /*End of defined classes*/
 /*Responsivity adjustments starts here*/
@@ -435,6 +431,9 @@ Page reads from center instead of left
     header {
         position: relative;
         justify-content: flex-start;
+
+        /*Add some more space between header and main content*/
+        margin-bottom: 16px;
     }
     /*Center everyting in main*/
     main {
@@ -448,6 +447,7 @@ Page reads from center instead of left
     }
     footer {
         justify-content: center;
+        text-align: center;
     }
     .cardContainer {
         justify-content: center;
@@ -486,7 +486,12 @@ Page reads from center instead of left
     .mainNav {
         align-items: center;
         margin-left: 0px;
+        margin-top: 38px;
+    }
+    /*Add some more space for main content as it gets to close to navigation*/
+    main {
         margin-top: 32px;
     }
+    
 
 }
