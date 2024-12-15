@@ -2,7 +2,7 @@
 /*Define colors*/
 $backcoundColor : #060309;
 $textColor_1 : #ebe3f4;
-$textColor_2 : #819796;
+$textColor_2 : #B8D9D4;
 $gradColor1 : #4158D0;
 $gradColor2 : #C850C0;
 $gradColor3 : #FFCC70;
@@ -86,7 +86,7 @@ $transitionSpd : 0.2s;
     src: url(./Font/Outfit-VariableFont.ttf);
 }
 html {
-    font-family: myFirstFont, 'Trebuchet MS', sans-serif;;
+    font-family: myFirstFont, 'Trebuchet MS', sans-serif;
 }
 /*Set standard styling*/
 body {
@@ -94,9 +94,6 @@ body {
     /*Set colors*/
     background-color: $backcoundColor;
     color: $textColor_1;
-
-    /*Set main font*/
-    font-family: "Outfit" sans-serif;
 }
 /*Style h1, and add underline effect*/
 h1 {
@@ -137,7 +134,7 @@ h2::before {
 .logo::after {
     /*Add line hover effect, and change gradient to white*/
     @include hoverEffectLine(100%);
-    background-color: white;
+    background-color: $textColor_1;
     background-image: none;
 }
 .logo:hover::after {
