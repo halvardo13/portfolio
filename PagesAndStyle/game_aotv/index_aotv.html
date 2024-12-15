@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <!--Link to CSS-->
-    <link rel="stylesheet" href="/CSS/style.css">
-    <link rel="stylesheet" href="/CSS/gameRunner.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/gameRunner.css">
 </head>
 <body>
     <!--Navigation sidebar-->
     <header>
-        <a href="/index.html" class="logo">Halvardo13</a>
-        <nav class="mainNav">
+        <a href="/" class="logo" style="display: none;">Halvardo13</a>
+        <nav class="mainNav" style="display: none;">
             <a href="/index.html" class="navLink">Home</a>
-            <a href="/pages/index_jamGames.html" class="navLink">Games</a>
-            <a href="/pages/index_work.html" class="navLink">Work</a>
-            <a href="/pages/index_contact.html" class="navLink">Contact</a>
+            <a href="../index_jamGames.html" class="navLink">Games</a>
+            <a href="../index_work.html" class="navLink">Work</a>
+            <a href="../index_contact.html" class="navLink">Contact</a>
         </nav>
     </header>
     <!--Main-->
@@ -33,7 +33,7 @@
                 </canvas>
             </div>
             <!-- Run the game code -->
-            <script src="html5game/BAKOM24.js?cachebust=2133728832"></script>
+            <script src="html5game/LudumDare54.js?cachebust=420460109"></script>
             <!-- Builtin injector for injecting runner path -->
             <script>window.onload = GameMaker_Init;</script>
             <!--
@@ -43,26 +43,24 @@
         <!--Show some information about the game-->
         <section class="runnerGameInfo">
             <p class="textContent warning">This game is only playable on desktop. Maximize window if you are on desktop.</p>
-            <h1>Seismic Activity</h1>
-            <p class="textContent">
-                Major earthquakes are incoming! Fight the forces of Earths Core!<br>
-                Place down new bedrock, and create new land to keep the intergerty of earth's surface.
+            <h1>Age of TinyVillage</h1>
+            <p class="textContent">Build and manage a very tiny village.</p>
+            <h2>Gameplay</h2>
+            <p class="textContent">Place and select buildings or units. 
+                Blue units are workers and grey units are soldiers. 
+                You can add multiple workers per building to increase the produce speed.
             </p>
             <h2>Controls</h2>
-            <p class="textContent">
-                Rotate tiles: Left Mouse<br>
-                Interact/place: Right Mouse
-            </p>
+            <p class="textContent">Select/place: Left Mouse</p>
             <h2>Made in: 48hrs</h2>
         </section>
-
         <!--A seperate way for user to return-->
         <div class="cardContainer">
             <!--Return back to games page-->
             <div class="card">
                 <p class="cardName">Return to</p>
                 <div class="cardLinksContainer">
-                    <a href="/pages/index_jamGames.html">Games</a>
+                    <a href="../index_jamGames.html">Games</a>
                 </div>
             </div>
         </div>

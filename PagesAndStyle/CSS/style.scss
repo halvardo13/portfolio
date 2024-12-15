@@ -82,7 +82,7 @@ $transitionSpd : 0.2s;
 /*Set costum font*/
 @font-face {
     font-family: myFirstFont;
-    src: url(../Font/Outfit-VariableFont.ttf);
+    src: url(./Font/Outfit-VariableFont.ttf);
 }
 html {
     font-family: myFirstFont, 'Trebuchet MS', sans-serif;;

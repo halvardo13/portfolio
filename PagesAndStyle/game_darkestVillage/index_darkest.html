@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <!--Link to CSS-->
-    <link rel="stylesheet" href="/CSS/style.css">
-    <link rel="stylesheet" href="/CSS/gameRunner.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/gameRunner.css">
 </head>
 <body>
     <!--Navigation sidebar-->
     <header>
-        <a href="/index.html" class="logo">Halvardo13</a>
-        <nav class="mainNav">
+        <a href="/" class="logo" style="display: none;">Halvardo13</a>
+        <nav class="mainNav" style="display: none;">
             <a href="/index.html" class="navLink">Home</a>
-            <a href="/pages/index_jamGames.html" class="navLink">Games</a>
-            <a href="/pages/index_work.html" class="navLink">Work</a>
-            <a href="/pages/index_contact.html" class="navLink">Contact</a>
+            <a href="../index_jamGames.html" class="navLink">Games</a>
+            <a href="../index_work.html" class="navLink">Work</a>
+            <a href="../index_contact.html" class="navLink">Contact</a>
         </nav>
     </header>
     <!--Main-->
@@ -33,7 +33,7 @@
                 </canvas>
             </div>
             <!-- Run the game code -->
-            <script src="html5game/IndieTales Jam.js?NLUZB=1678482319"></script>
+            <script src="html5game/dikult eksamen.js?cachebust=2123199247"></script>
             <!-- Builtin injector for injecting runner path -->
             <script>window.onload = GameMaker_Init;</script>
             <!--
@@ -43,9 +43,12 @@
         <!--Show some information about the game-->
         <section class="runnerGameInfo">
             <p class="textContent warning">This game is only playable on desktop. Maximize window if you are on desktop.</p>
-            <h1>JailRoom</h1>
-            <p class="textContent">Use mouse to place and select buildings or units. Blue units are workers and grey units are soldiers. You can add multiple workers per building to increase the produce speed.</p>
-            <h2>Made in: 72hrs</h2>
+            <h1>Darkest Village</h1>
+            <p class="textContent">Explore a mysterious world event. Made for a digital litterature exam. The goal was to create a story telling system with procedural elements. </p>
+            <a href="https://www4.uib.no/en/courses/dikult103" target="_blank" class="navLink linkInText">
+                Course this was exam for
+            </a>
+            <h2>Made in: One Week</h2>
         </section>
         <!--A seperate way for user to return-->
         <div class="cardContainer">
@@ -53,7 +56,7 @@
             <div class="card">
                 <p class="cardName">Return to</p>
                 <div class="cardLinksContainer">
-                    <a href="/pages/index_jamGames.html">Games</a>
+                    <a href="../index_jamGames.html">Games</a>
                 </div>
             </div>
         </div>
