@@ -1,10 +1,16 @@
-/*https://dikult105.k.uib.no/2024H/students/hamje5522/portfolio/PagesAndStyle/CSS/style.scss*/
+/*
+    I used scss as a CSS preprocessor. This is the file location for my sass code: 
+    https://dikult105.k.uib.no/2024H/students/hamje5522/portfolio/PagesAndStyle/CSS/style.scss
+*/
 /*Define colors*/
 /*Magins*/
 /*Cards*/
 /*Define the three main font sizes to keep consistency*/
 /*Other designs that should remain consistent*/
-/**/
+/*This is the mixin for having the line effect (vertical), used for hover effects
+Has gradient, but can be changed to regular color. Such as with the logo.
+*/
+/*This is the mixin for gradient underline. Used for h1 and h2*/
 /*Keyframes to use for animating in the line effects*/
 @keyframes navLineFadein {
   0% {
@@ -55,6 +61,7 @@ h1 {
 }
 
 h1::before {
+  /*Add underline effect*/
   content: "";
   height: 2px;
   position: absolute;
@@ -83,6 +90,7 @@ h2 {
 }
 
 h2::before {
+  /*Add underline effect, with slightly longer animation time to have a delay from h1*/
   content: "";
   height: 2px;
   position: absolute;
@@ -340,7 +348,7 @@ header a {
   margin: 0px;
   margin-top: auto;
   width: 220px;
-  /*Button desing for links - exclusivly used in cards*/
+  /*Button design for links - exclusivly used in cards*/
 }
 .cardLinksContainer a {
   font-size: 26px;
@@ -416,28 +424,6 @@ footer {
   flex-flow: column;
   margin: 48px;
   position: relative;
-  /*Same effect as logo*/
-  /*
-  p {
-      position: relative;
-      font-size: $fSizeSmall;
-      font-weight: bold;
-      width: fit-content;
-      border-radius: $borderRad;
-  }
-  p::after {
-      @include hoverEffectLine(100%);
-      background-color: white;
-      background-image: none;
-  }
-  p:hover::after {
-      right: 0%;
-  }
-  p:hover {
-      background-color: $textColor_1;
-      color: $backcoundColor;
-  }
-  */
 }
 footer p {
   font-size: 26px;
